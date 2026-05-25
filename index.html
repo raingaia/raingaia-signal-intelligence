@@ -3,704 +3,248 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hermes Evidence Engine — RAINGAIA LLC</title>
-  <meta
-    name="description"
-    content="Hermes Evidence Engine by RAINGAIA LLC. Signal intelligence, anomaly detection, and evidence systems across 11 signal types."
-  />
+  <title>RAINGAIA Sentinel — End-to-end signal intelligence. From wire to evidence.</title>
+  <meta name="description" content="RAINGAIA Sentinel is an end-to-end signal intelligence platform. Connect any hardware, analyze 11 signal types deterministically, export evidence. On-premise. Air-gapped. No cloud." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://raingaia.com/" />
+  <meta name="keywords" content="signal intelligence, anomaly detection, industrial monitoring, on-premise, air-gapped, CAN Bus, Modbus, OPC-UA, MQTT, evidence platform, RAINGAIA Sentinel, ICS security, OT monitoring" />
+  <meta name="author" content="RAINGAIA LLC" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://raingaia.com/" />
+  <meta property="og:title" content="RAINGAIA Sentinel — From wire to evidence." />
+  <meta property="og:description" content="End-to-end signal intelligence. Connect any hardware, analyze 11 signal types deterministically, export evidence. On-premise. Air-gapped." />
+  <meta property="og:site_name" content="RAINGAIA LLC" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RAINGAIA Sentinel — End-to-end signal intelligence" />
+  <meta name="twitter:description" content="From wire to evidence. 11 signal types. On-premise. Air-gapped. No cloud dependency." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"RAINGAIA LLC","url":"https://raingaia.com","email":"raingaia@outlook.com","telephone":"+1-571-651-8099","address":{"@type":"PostalAddress","streetAddress":"7901 4th St N Ste 300","addressLocality":"St. Petersburg","addressRegion":"FL","postalCode":"33702","addressCountry":"US"},"description":"End-to-end signal intelligence platform for critical systems. On-premise, air-gapped deployment."}</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --paper:#f7f5f0;
-      --white:#ffffff;
-      --ink:#172234;
-      --ink-2:#2f425c;
-      --ink-3:#60748d;
-      --ink-4:#94a3b8;
-      --line:#dde5ee;
-      --line-2:#ecf1f5;
-      --gold:#b68b2d;
-      --gold-soft:#f7efe0;
-      --gold-line:#e6d1a6;
+      --paper:#f7f5f0;--white:#fff;
+      --ink:#172234;--ink-2:#2f425c;--ink-3:#60748d;--ink-4:#94a3b8;
+      --line:#dde5ee;--line-2:#ecf1f5;
+      --gold:#b68b2d;--gold-soft:#f7efe0;--gold-line:#e6d1a6;
       --shadow:0 10px 40px rgba(23,34,52,.08);
-      --radius:22px;
       --max:1240px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      background:var(--paper);
-      color:var(--ink);
-      font-family:'DM Sans',sans-serif;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+    .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
 
-    .container{
-      width:min(var(--max), calc(100% - 48px));
-      margin:0 auto;
-    }
-
-    .mono{
-      font-family:'IBM Plex Mono',monospace;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-    }
-
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter: blur(10px);
-      background:rgba(247,245,240,.82);
-      border-bottom:1px solid rgba(221,229,238,.9);
-    }
-
-    .topbar-inner{
-      height:84px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      min-width:240px;
-    }
-
-    .brand-mark{
-      width:42px;
-      height:42px;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(145deg,#1d2a40,#314868);
-      color:#fff;
-      box-shadow:var(--shadow);
-      font-family:'Playfair Display',serif;
-      font-size:20px;
-      font-weight:800;
-    }
-
-    .brand-text strong{
-      display:block;
-      font-family:'Playfair Display',serif;
-      font-size:28px;
-      line-height:1;
-      letter-spacing:-.03em;
-    }
-
-    .brand-text span{
-      display:block;
-      margin-top:6px;
-      color:var(--gold);
-      font-size:10px;
-    }
-
-    nav{
-      display:flex;
-      align-items:center;
-      gap:28px;
-      color:var(--ink-2);
-      font-size:15px;
-    }
-
+    /* NAV */
+    .topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(247,245,240,.9);border-bottom:1px solid rgba(221,229,238,.9)}
+    .topbar-inner{height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand-mark{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(145deg,#1d2a40,#314868);color:#fff;font-family:'Playfair Display',serif;font-size:18px;font-weight:800;box-shadow:var(--shadow)}
+    .brand-text strong{display:block;font-family:'Playfair Display',serif;font-size:22px;line-height:1;letter-spacing:-.03em}
+    .brand-text span{display:block;margin-top:4px;color:var(--gold);font-size:10px;font-family:'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+    nav{display:flex;align-items:center;gap:26px;color:var(--ink-2);font-size:15px}
     nav a:hover{color:var(--ink)}
-
-    .nav-actions{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      border-radius:14px;
-      height:50px;
-      padding:0 22px;
-      font-weight:600;
-      transition:.2s ease;
-      border:1px solid transparent;
-      cursor:pointer;
-      white-space:nowrap;
-    }
-
-    .btn-primary{
-      background:var(--ink);
-      color:#fff;
-      box-shadow:0 10px 30px rgba(23,34,52,.18);
-    }
-
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;height:46px;padding:0 20px;font-weight:600;font-size:15px;transition:.2s ease;border:1px solid transparent;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif}
+    .btn-primary{background:var(--ink);color:#fff;box-shadow:0 8px 24px rgba(23,34,52,.18)}
     .btn-primary:hover{transform:translateY(-1px)}
-    .btn-ghost{
-      background:#fff;
-      border-color:var(--line);
-      color:var(--ink);
-    }
+    .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}
+    .btn-ghost:hover{border-color:var(--ink-3)}
+    .btn-gold{background:var(--gold);color:#fff;border:none;box-shadow:0 8px 24px rgba(182,139,45,.3)}
+    .btn-gold:hover{transform:translateY(-1px)}
+    .mobile-toggle{display:none;background:none;border:none;font-size:26px;color:var(--ink);cursor:pointer}
 
-    .hero{
-      padding:72px 0 48px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(420px, .8fr);
-      gap:44px;
-      align-items:center;
-    }
-
-    .eyebrow{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      color:var(--gold);
-      font-size:11px;
-      margin-bottom:24px;
-    }
-
-    .eyebrow::before{
-      content:"";
-      width:26px;
-      height:1px;
-      background:var(--gold);
-      display:block;
-    }
-
-    h1{
-      margin:0;
-      font-family:'Playfair Display',serif;
-      font-size:clamp(54px, 7vw, 92px);
-      line-height:.98;
-      letter-spacing:-.05em;
-    }
-
-    .gold{color:var(--gold); font-style:italic}
-
-    .hero p{
-      margin:28px 0 0;
-      max-width:760px;
-      font-size:21px;
-      line-height:1.72;
-      color:var(--ink-2);
-    }
-
-    .hero-actions{
-      margin-top:34px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      align-items:center;
-    }
-
-    .hero-note{
-      margin-top:20px;
-      color:var(--ink-3);
-      font-size:13px;
-    }
-
-    .stats{
-      margin-top:42px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      border:1px solid var(--line);
-      border-radius:26px;
-      overflow:hidden;
-      background:#fff;
-      box-shadow:var(--shadow);
-    }
-
-    .stat{
-      padding:26px 24px;
-      border-right:1px solid var(--line);
-    }
-
+    /* HERO */
+    .hero{padding:80px 0 56px}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+    .eyebrow{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:11px;margin-bottom:20px;font-family:'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:22px;height:1px;background:var(--gold);display:block}
+    h1{margin:0;font-family:'Playfair Display',serif;font-size:clamp(48px,6vw,84px);line-height:.97;letter-spacing:-.05em}
+    .gold{color:var(--gold);font-style:italic}
+    .hero-desc{margin:26px 0 0;font-size:19px;line-height:1.74;color:var(--ink-2)}
+    .hero-actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .hero-note{margin-top:18px;color:var(--ink-3);font-size:12px;font-family:'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+    .stats{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+    .stat{padding:22px 20px;border-right:1px solid var(--line)}
     .stat:last-child{border-right:none}
+    .stat strong{display:block;font-family:'Playfair Display',serif;font-size:38px;line-height:1;letter-spacing:-.04em}
+    .stat span{display:block;margin-top:8px;color:var(--ink-3);font-size:10px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
 
-    .stat strong{
-      display:block;
-      font-family:'Playfair Display',serif;
-      font-size:44px;
-      line-height:1;
-      letter-spacing:-.04em;
+    /* PIPELINE CARD */
+    .pipeline-card{background:linear-gradient(160deg,#1a2840 0%,#243656 100%);border-radius:28px;overflow:hidden;box-shadow:0 24px 64px rgba(23,34,52,.3);padding:28px}
+    .pipe-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+    .pipe-steps{display:flex;flex-direction:column;gap:3px}
+    .pipe-step{display:grid;grid-template-columns:32px 1fr auto;gap:12px;align-items:center;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+    .pipe-num{width:28px;height:28px;border-radius:8px;background:rgba(182,139,45,.2);border:1px solid rgba(182,139,45,.35);display:grid;place-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#d8b15c;font-weight:600}
+    .pipe-name{font-size:14px;font-weight:600;color:#fff;margin-bottom:2px}
+    .pipe-desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.4}
+    .pipe-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:3px 8px;border-radius:999px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+    .tag-green{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.25)}
+    .tag-blue{background:rgba(59,130,246,.15);color:#60a5fa;border:1px solid rgba(59,130,246,.25)}
+    .tag-purple{background:rgba(139,92,246,.15);color:#a78bfa;border:1px solid rgba(139,92,246,.25)}
+    .tag-gold{background:rgba(182,139,45,.15);color:#d8b15c;border:1px solid rgba(182,139,45,.3)}
+    .tag-red{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.25)}
+    .pipe-arrow{text-align:center;color:rgba(255,255,255,.12);font-size:11px;padding:2px 0;font-family:'IBM Plex Mono',monospace}
+    .pipe-metrics{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .pipe-metric{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px;text-align:center}
+    .pipe-metric strong{display:block;font-family:'Playfair Display',serif;font-size:26px;color:#fff;line-height:1}
+    .pipe-metric span{display:block;margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.35);letter-spacing:.1em;text-transform:uppercase}
+
+    /* SECTIONS */
+    .section{padding:80px 0}
+    .section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .section.dark{background:linear-gradient(135deg,#172234 0%,#1e2e48 100%);color:#fff}
+    .section-head{display:grid;grid-template-columns:300px 1fr;gap:48px;margin-bottom:40px;align-items:start}
+    .section-head h2{margin:0;font-family:'Playfair Display',serif;font-size:46px;line-height:1.04;letter-spacing:-.04em}
+    .section-head p{margin:0;font-size:17px;color:var(--ink-2);line-height:1.78}
+    .section.dark .section-head p{color:rgba(255,255,255,.65)}
+    .section.dark .section-head h2{color:#fff}
+
+    /* WHO IS THIS FOR */
+    .for-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .for-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow);display:flex;align-items:flex-start;gap:16px;transition:.2s}
+    .for-card:hover{border-color:var(--gold-line);box-shadow:0 14px 40px rgba(182,139,45,.1);transform:translateY(-2px)}
+    .for-icon{width:44px;height:44px;border-radius:12px;background:var(--gold-soft);border:1px solid var(--gold-line);display:grid;place-items:center;font-size:20px;flex-shrink:0}
+    .for-card h3{margin:0 0 6px;font-size:16px;font-weight:600}
+    .for-card p{margin:0;color:var(--ink-3);font-size:13px;line-height:1.6}
+
+    /* USE CASES */
+    .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .case-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:26px;transition:.2s}
+    .case-card:hover{background:rgba(255,255,255,.11);border-color:rgba(182,139,45,.35)}
+    .case-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+    .case-domain{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.12em;text-transform:uppercase}
+    .case-status{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:3px 8px;border-radius:999px;background:rgba(239,68,68,.2);color:#f87171;border:1px solid rgba(239,68,68,.3);letter-spacing:.08em}
+    .case-status.ok{background:rgba(16,185,129,.15);color:#34d399;border-color:rgba(16,185,129,.25)}
+    .case-card h3{margin:0 0 10px;font-family:'Playfair Display',serif;font-size:20px;color:#fff;line-height:1.2}
+    .case-card p{margin:0 0 18px;color:rgba(255,255,255,.55);font-size:14px;line-height:1.7}
+    .case-finding{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px 14px}
+    .case-finding .label{font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+    .case-finding .value{font-size:13px;color:rgba(255,255,255,.8);line-height:1.5}
+
+    /* COMPARISON TABLE */
+    .compare-wrap{overflow-x:auto}
+    .compare-table{width:100%;border-collapse:collapse;background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+    .compare-table th{padding:16px 20px;text-align:left;font-size:12px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--line)}
+    .compare-table th:first-child{color:var(--ink-3);background:#fff}
+    .compare-table th.old{color:#94a3b8;background:#f8fafc}
+    .compare-table th.new{color:var(--gold);background:var(--gold-soft)}
+    .compare-table td{padding:14px 20px;font-size:14px;border-bottom:1px solid var(--line-2)}
+    .compare-table tr:last-child td{border-bottom:none}
+    .compare-table td:first-child{color:var(--ink-2);font-weight:500}
+    .compare-table td.old{color:#94a3b8;background:#fafafa}
+    .compare-table td.new{color:var(--ink);font-weight:600;background:var(--gold-soft)}
+    .check-icon{color:#059669;margin-right:6px}
+    .x-icon{color:#94a3b8;margin-right:6px}
+
+    /* CONNECTORS */
+    .connector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .connector-item{display:flex;align-items:center;gap:12px;padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);transition:.2s}
+    .connector-item:hover{border-color:var(--gold-line);transform:translateY(-1px)}
+    .conn-dot{width:8px;height:8px;border-radius:999px;background:#059669;flex-shrink:0}
+    .conn-name{font-size:14px;font-weight:600}
+    .conn-sub{font-size:12px;color:var(--ink-3);margin-top:1px}
+    .connector-note{margin-top:20px;padding:16px 20px;background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:14px;font-size:14px;color:var(--ink-2);line-height:1.6}
+    .connector-note strong{color:var(--ink)}
+
+    /* LAYERS */
+    .layers{display:flex;flex-direction:column;gap:2px}
+    .layer{display:grid;grid-template-columns:200px 1fr auto;gap:24px;align-items:center;padding:24px 28px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);transition:.2s}
+    .layer:hover{border-color:var(--gold-line);box-shadow:0 12px 40px rgba(182,139,45,.1)}
+    .layer-num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);margin-bottom:6px}
+    .layer-name{font-family:'Playfair Display',serif;font-size:20px;line-height:1.2}
+    .layer-desc{color:var(--ink-2);font-size:14px;line-height:1.7}
+    .layer-badge{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:6px 12px;border-radius:999px;background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold-line);white-space:nowrap;letter-spacing:.08em;text-transform:uppercase}
+    .layer-connector{text-align:center;color:var(--ink-4);font-size:11px;padding:4px 0;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em}
+
+    /* SIGNAL GRID */
+    .signal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .signal-box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+    .signal-box h3{margin:0 0 10px;font-size:17px;display:flex;align-items:center;gap:10px}
+    .signal-dot{width:9px;height:9px;border-radius:999px;flex-shrink:0}
+    .signal-box p{margin:0;color:var(--ink-2);line-height:1.7;font-size:14px}
+
+    /* TRUST BADGES */
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:0}
+    .trust-badge{display:flex;align-items:center;gap:14px;padding:18px 20px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:14px}
+    .trust-badge-icon{width:36px;height:36px;border-radius:9px;background:rgba(182,139,45,.2);border:1px solid rgba(182,139,45,.3);display:grid;place-items:center;font-size:16px;flex-shrink:0}
+    .trust-badge-text strong{display:block;font-size:14px;color:#fff;margin-bottom:2px}
+    .trust-badge-text span{font-size:12px;color:rgba(255,255,255,.45);line-height:1.4}
+
+    /* WHY */
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .why-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+    .why-icon{width:40px;height:40px;border-radius:10px;background:var(--gold-soft);border:1px solid var(--gold-line);display:grid;place-items:center;font-size:18px;margin-bottom:16px}
+    .why-card h3{margin:0 0 10px;font-size:17px;font-family:'Playfair Display',serif}
+    .why-card p{margin:0;color:var(--ink-2);font-size:14px;line-height:1.74}
+
+    /* REQUEST */
+    .request-block{background:linear-gradient(135deg,#172234 0%,#243652 100%);color:#fff;border-radius:32px;padding:56px;box-shadow:0 18px 60px rgba(23,34,52,.2)}
+    .request-block h2{margin:0;font-family:'Playfair Display',serif;font-size:50px;line-height:1.02;letter-spacing:-.04em}
+    .request-sub{margin:16px 0 36px;max-width:560px;color:rgba(255,255,255,.7);font-size:17px;line-height:1.8}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .form-field{display:flex;flex-direction:column;gap:6px}
+    .form-field.full{grid-column:1 / -1}
+    .form-field label{color:rgba(255,255,255,.5);font-size:11px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+    .form-field input,.form-field select,.form-field textarea{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:12px 15px;color:#fff;font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:.2s;-webkit-appearance:none}
+    .form-field input::placeholder,.form-field textarea::placeholder{color:rgba(255,255,255,.25)}
+    .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:rgba(182,139,45,.5);background:rgba(255,255,255,.11)}
+    .form-field select option{background:#172234;color:#fff}
+    .form-field textarea{resize:vertical;min-height:96px}
+    .form-footer{margin-top:18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .form-note{color:rgba(255,255,255,.35);font-size:12px;font-family:'IBM Plex Mono',monospace;letter-spacing:.08em}
+    .form-success{display:none;text-align:center;padding:28px 0}
+    .form-success .check{width:52px;height:52px;border-radius:999px;background:rgba(182,139,45,.2);border:1px solid var(--gold);display:grid;place-items:center;margin:0 auto 14px;font-size:22px}
+    .form-success h3{margin:0 0 8px;font-family:'Playfair Display',serif;font-size:24px}
+    .form-success p{margin:0;color:rgba(255,255,255,.6);font-size:14px;line-height:1.7}
+
+    /* FOOTER */
+    .footer{padding:32px 0 52px}
+    .footer-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:32px 32px 18px;box-shadow:var(--shadow)}
+    .footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .footer-brand h3{margin:0;font-family:'Playfair Display',serif;font-size:28px}
+    .footer-brand .sub{margin-top:8px;color:var(--ink-2);font-size:15px}
+    .footer-brand .tagline{margin-top:14px;color:var(--gold);font-size:10px;font-family:'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+    .footer-contact{color:var(--ink-2);font-size:14px;line-height:1.9}
+    .footer-contact strong{color:var(--ink)}
+    .footer-bottom{margin-top:22px;padding-top:16px;border-top:1px solid var(--line-2);display:flex;justify-content:space-between;gap:14px;color:var(--ink-4);font-size:10px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+
+    /* RESPONSIVE */
+    @media(max-width:1100px){
+      .hero-grid,.section-head,.footer-grid{grid-template-columns:1fr}
+      .why-grid,.cases-grid,.for-grid,.trust-grid{grid-template-columns:repeat(2,1fr)}
+      .connector-grid{grid-template-columns:repeat(2,1fr)}
+      .layer{grid-template-columns:1fr;gap:12px}
+      .layer-badge{justify-self:start}
     }
-
-    .stat span{
-      display:block;
-      margin-top:10px;
-      color:var(--ink-3);
-      font-size:11px;
-    }
-
-    .signal-card{
-      background:linear-gradient(180deg,#efe6d5 0%, #f8f2e7 100%);
-      border:1px solid var(--gold-line);
-      border-radius:30px;
-      overflow:hidden;
-      box-shadow:0 18px 50px rgba(182,139,45,.12);
-    }
-
-    .signal-head{
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      align-items:center;
-      padding:18px 22px;
-      border-bottom:1px solid rgba(182,139,45,.18);
-      font-size:11px;
-      color:#6e5520;
-    }
-
-    .signal-body{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      min-height:360px;
-    }
-
-    .signal-left{
-      padding:18px 22px 22px;
-      border-right:1px solid rgba(182,139,45,.18);
-    }
-
-    .signal-right{
-      padding:18px 20px;
-      background:rgba(255,255,255,.28);
-      font-family:'IBM Plex Mono',monospace;
-      font-size:13px;
-      color:#5a4520;
-    }
-
-    .row{
-      display:grid;
-      grid-template-columns:90px 1fr 52px 52px;
-      gap:10px;
-      align-items:center;
-      padding:11px 0;
-      border-bottom:1px solid rgba(182,139,45,.12);
-    }
-
-    .row:last-child{border-bottom:none}
-
-    .dot{
-      width:8px;height:8px;border-radius:999px;display:inline-block;margin-right:10px
-    }
-
-    .bar{
-      height:4px;
-      background:rgba(23,34,52,.08);
-      border-radius:999px;
-      overflow:hidden;
-    }
-
-    .fill{
-      height:100%;
-      border-radius:999px;
-    }
-
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-width:48px;
-      padding:4px 6px;
-      font-size:10px;
-      border-radius:999px;
-    }
-
-    .ok{background:#d9f7e8;color:#046c45}
-    .warn{background:#fff0cf;color:#a76a00}
-    .crit{background:#ffe0df;color:#b71f1d}
-
-    .metric-mini{
-      margin-top:18px;
-      padding-top:16px;
-      border-top:1px solid rgba(182,139,45,.18);
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:8px;
-      text-align:center;
-    }
-
-    .metric-mini strong{
-      display:block;
-      font-family:'Playfair Display',serif;
-      font-size:28px;
-    }
-
-    .terminal-line{
-      padding:5px 0;
-      border-bottom:1px dashed rgba(90,69,32,.15);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .terminal-line:last-child{border-bottom:none}
-
-    .section{
-      padding:76px 0;
-    }
-
-    .section.alt{
-      background:#fff;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .section-head{
-      display:grid;
-      grid-template-columns:320px 1fr;
-      gap:48px;
-      margin-bottom:36px;
-      align-items:start;
-    }
-
-    .section-head h2{
-      margin:0;
-      font-family:'Playfair Display',serif;
-      font-size:48px;
-      line-height:1.04;
-      letter-spacing:-.04em;
-    }
-
-    .section-head p{
-      margin:0;
-      font-size:17px;
-      color:var(--ink-2);
-      line-height:1.78;
-      max-width:820px;
-    }
-
-    .signal-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:16px;
-    }
-
-    .signal-box{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:22px;
-      box-shadow:var(--shadow);
-    }
-
-    .signal-box h3{
-      margin:0 0 12px;
-      font-size:18px;
-    }
-
-    .signal-box p{
-      margin:0;
-      color:var(--ink-2);
-      line-height:1.7;
-      font-size:14px;
-    }
-
-    .signal-line{
-      width:10px;
-      height:10px;
-      border-radius:999px;
-      display:inline-block;
-      margin-right:10px;
-      vertical-align:middle;
-    }
-
-    .platform-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:1px;
-      background:var(--line);
-      border:1px solid var(--line);
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-
-    .platform-item{
-      background:#fff;
-      padding:30px 28px;
-      min-height:210px;
-    }
-
-    .platform-item .num{
-      color:var(--gold);
-      font-size:11px;
-      margin-bottom:16px;
-    }
-
-    .platform-item h3{
-      margin:0 0 12px;
-      font-size:22px;
-      line-height:1.2;
-      font-family:'Playfair Display',serif;
-    }
-
-    .platform-item p{
-      margin:0;
-      color:var(--ink-2);
-      font-size:14px;
-      line-height:1.75;
-    }
-
-    .pricing-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-      align-items:stretch;
-    }
-
-    .price{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:28px;
-      box-shadow:var(--shadow);
-      position:relative;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .price.featured{
-      border:2px solid var(--gold);
-      background:linear-gradient(180deg,#fff 0%, #fffaf1 100%);
-    }
-
-    .badge{
-      position:absolute;
-      top:-12px;
-      left:24px;
-      background:var(--gold);
-      color:#fff;
-      border-radius:999px;
-      padding:6px 12px;
-      font-size:10px;
-    }
-
-    .price .name{
-      color:var(--ink-3);
-      font-size:11px;
-      margin-bottom:12px;
-    }
-
-    .price .amount{
-      font-family:'Playfair Display',serif;
-      font-size:52px;
-      line-height:1;
-      letter-spacing:-.05em;
-    }
-
-    .price .period{
-      color:var(--ink-3);
-      font-size:14px;
-      margin-top:8px;
-    }
-
-    .price ul{
-      list-style:none;
-      margin:24px 0;
-      padding:0;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      color:var(--ink-2);
-      font-size:14px;
-      line-height:1.6;
-      flex:1;
-    }
-
-    .price li::before{
-      content:"—";
-      color:var(--gold);
-      margin-right:10px;
-    }
-
-    .cta-block{
-      background:linear-gradient(135deg,#172234 0%, #243652 100%);
-      color:#fff;
-      border-radius:34px;
-      padding:56px;
-      box-shadow:0 18px 60px rgba(23,34,52,.18);
-    }
-
-    .cta-block h2{
-      margin:0;
-      font-family:'Playfair Display',serif;
-      font-size:54px;
-      line-height:1.02;
-      letter-spacing:-.04em;
-    }
-
-    .cta-block p{
-      margin:20px 0 0;
-      max-width:760px;
-      color:rgba(255,255,255,.8);
-      font-size:18px;
-      line-height:1.8;
-    }
-
-    .footer{
-      padding:34px 0 56px;
-    }
-
-    .footer-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:30px;
-      padding:34px 34px 20px;
-      box-shadow:var(--shadow);
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
-    }
-
-    .footer-brand h3{
-      margin:0;
-      font-family:'Playfair Display',serif;
-      font-size:30px;
-      line-height:1;
-    }
-
-    .footer-brand .sub{
-      margin-top:10px;
-      color:var(--ink-2);
-      font-size:16px;
-    }
-
-    .footer-brand .tagline{
-      margin-top:16px;
-      color:var(--gold);
-      font-size:11px;
-    }
-
-    .footer-contact{
-      color:var(--ink-2);
-      font-size:15px;
-      line-height:1.9;
-    }
-
-    .footer-contact strong{
-      color:var(--ink);
-    }
-
-    .footer-bottom{
-      margin-top:24px;
-      padding-top:18px;
-      border-top:1px solid var(--line-2);
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      color:var(--ink-4);
-      font-size:11px;
-    }
-
-    .mobile-toggle{
-      display:none;
-      background:none;
-      border:none;
-      font-size:26px;
-      color:var(--ink);
-      cursor:pointer;
-    }
-
-    @media (max-width: 1180px){
-      .hero-grid,
-      .section-head,
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-
-      .pricing-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .signal-body{
-        grid-template-columns:1fr;
-      }
-
-      .signal-left{border-right:none;border-bottom:1px solid rgba(182,139,45,.18)}
-    }
-
-    @media (max-width: 920px){
-      nav{
-        display:none;
-        position:absolute;
-        left:24px;
-        right:24px;
-        top:84px;
-        background:#fff;
-        border:1px solid var(--line);
-        border-radius:20px;
-        padding:18px;
-        box-shadow:var(--shadow);
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
+    @media(max-width:920px){
+      nav{display:none;position:absolute;left:24px;right:24px;top:84px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}
       nav.open{display:flex}
       .mobile-toggle{display:block}
       .nav-actions .btn-ghost{display:none}
-
-      .stats{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .signal-grid,
-      .pricing-grid,
-      .platform-grid{
-        grid-template-columns:1fr;
-      }
-
-      .platform-grid{
-        display:grid;
-        gap:16px;
-        background:transparent;
-        border:none;
-        box-shadow:none;
-      }
-
-      .platform-item{
-        border:1px solid var(--line);
-        border-radius:22px;
-        box-shadow:var(--shadow);
-      }
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .signal-grid,.why-grid,.cases-grid,.for-grid,.trust-grid,.connector-grid{grid-template-columns:1fr}
+      .form-grid{grid-template-columns:1fr}
+      .form-field.full{grid-column:1}
     }
-
-    @media (max-width: 680px){
-      .container{width:min(var(--max), calc(100% - 28px))}
-      .topbar-inner{height:74px}
-      .hero{padding:44px 0 30px}
-      h1{font-size:48px}
-      .hero p{font-size:17px}
+    @media(max-width:680px){
+      .container{width:min(var(--max),calc(100% - 28px))}
+      .topbar-inner{height:72px}
+      .hero{padding:48px 0 32px}
+      h1{font-size:46px}
+      .hero-desc{font-size:17px}
       .stats{grid-template-columns:1fr}
       .stat{border-right:none;border-bottom:1px solid var(--line)}
       .stat:last-child{border-bottom:none}
       .section{padding:54px 0}
-      .section-head h2{font-size:38px}
-      .cta-block{padding:34px 24px}
-      .cta-block h2{font-size:38px}
-      .footer-bottom{
-        flex-direction:column;
-      }
-      .row{
-        grid-template-columns:82px 1fr 42px 46px;
-      }
+      .section-head h2{font-size:36px}
+      .request-block{padding:32px 22px}
+      .request-block h2{font-size:36px}
+      .footer-bottom{flex-direction:column}
     }
   </style>
 </head>
@@ -709,393 +253,579 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <a href="#" class="brand">
-        <div class="brand-mark">H</div>
+        <div class="brand-mark">R</div>
         <div class="brand-text">
-          <strong>Hermes</strong>
-          <span class="mono">By RAINGAIA LLC</span>
+          <strong>RAINGAIA Sentinel</strong>
+          <span>By RAINGAIA LLC</span>
         </div>
       </a>
-
       <button class="mobile-toggle" id="mobileToggle">☰</button>
-
       <nav id="mainNav">
+        <a href="#for-who">Who it's for</a>
+        <a href="#pipeline">Platform</a>
         <a href="#signals">Signals</a>
-        <a href="#platform">Platform</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#compare">vs. Traditional</a>
         <a href="#contact">Contact</a>
       </nav>
-
       <div class="nav-actions">
-        <a class="btn btn-ghost" href="#platform">Architecture</a>
-        <a class="btn btn-primary" href="#pricing">Start Free Trial</a>
+        <a class="btn btn-ghost" href="#pipeline">How it works</a>
+        <a class="btn btn-primary" href="#contact">Request Consultation</a>
       </div>
     </div>
   </header>
 
   <main>
+
+    <!-- ══ HERO ══ -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow mono">RAINGAIA LLC — Hermes Evidence Engine</div>
-
-          <h1>
-            Signal intelligence
-            for systems that
-            <span class="gold">cannot fail.</span>
-          </h1>
-
-          <p>
-            Hermes delivers behavioral anomaly detection, signal classification,
-            and evidence-ready outputs across <strong>11 different signal types</strong>:
-            CAN Bus, Modbus RTU, Audio, Biometric, EEG / ECG, IoT Sensor, RF / IQ,
-            Vibration, Lab Science, Serial, and Network. One premium platform.
-            One evidence engine. Zero blind spots.
+          <div class="eyebrow">RAINGAIA LLC — Sentinel Platform</div>
+          <h1>From wire<br>to <span class="gold">evidence.</span></h1>
+          <p class="hero-desc">
+            RAINGAIA Sentinel is an end-to-end signal intelligence platform.
+            Connect any industrial hardware, analyze <strong>11 signal types</strong>
+            with deterministic precision, and produce evidence-grade outputs —
+            entirely within your own infrastructure. No cloud. No vendor lock-in.
+            No blind spots.
           </p>
-
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#pricing">Start Free Trial</a>
-            <a class="btn btn-ghost" href="#signals">Explore Signal Coverage</a>
+            <a class="btn btn-primary" href="#contact">Request Technical Consultation</a>
+            <a class="btn btn-ghost" href="#pipeline">See how it works</a>
           </div>
-
-          <div class="hero-note mono">
-            Enterprise-grade • Deep-tech • Multi-domain • Evidence-ready
-          </div>
-
+          <div class="hero-note">On-premise · Air-gapped · Privacy-first · Evidence-ready</div>
           <div class="stats">
-            <div class="stat">
-              <strong>&lt;50ms</strong>
-              <span class="mono">P99 latency</span>
-            </div>
-            <div class="stat">
-              <strong>11</strong>
-              <span class="mono">signal types</span>
-            </div>
-            <div class="stat">
-              <strong>14</strong>
-              <span class="mono">behavior classes</span>
-            </div>
-            <div class="stat">
-              <strong>PDF</strong>
-              <span class="mono">evidence export</span>
-            </div>
+            <div class="stat"><strong>&lt;50ms</strong><span>P99 latency</span></div>
+            <div class="stat"><strong>11</strong><span>signal types</span></div>
+            <div class="stat"><strong>14</strong><span>behavior classes</span></div>
+            <div class="stat"><strong>PDF</strong><span>evidence export</span></div>
           </div>
         </div>
 
-        <div class="signal-card">
-          <div class="signal-head mono">
-            <span>Live Signal Monitor</span>
-            <span>5 CRIT · 1 WARN · 6 ACTIVE</span>
-          </div>
-
-          <div class="signal-body">
-            <div class="signal-left">
-              <div class="row">
-                <div><span class="dot" style="background:#c9861a"></span>CAN Bus</div>
-                <div class="bar"><div class="fill" style="width:93%;background:#dc2626"></div></div>
-                <div>93%</div>
-                <div class="tag crit">CRIT</div>
+        <!-- Live pipeline visual -->
+        <div class="pipeline-card">
+          <div class="pipe-label mono">Sentinel · Live Pipeline</div>
+          <div class="pipe-steps">
+            <div class="pipe-step">
+              <div class="pipe-num">01</div>
+              <div>
+                <div class="pipe-name">Edge Agent</div>
+                <div class="pipe-desc">Modbus · CAN · MQTT · OPC-UA · Serial · RF/IQ · +5 more</div>
               </div>
-              <div class="row">
-                <div><span class="dot" style="background:#2563eb"></span>Modbus</div>
-                <div class="bar"><div class="fill" style="width:82%;background:#dc2626"></div></div>
-                <div>82%</div>
-                <div class="tag crit">CRIT</div>
-              </div>
-              <div class="row">
-                <div><span class="dot" style="background:#7c3aed"></span>Vibration</div>
-                <div class="bar"><div class="fill" style="width:100%;background:#dc2626"></div></div>
-                <div>100%</div>
-                <div class="tag crit">CRIT</div>
-              </div>
-              <div class="row">
-                <div><span class="dot" style="background:#dc2626"></span>Biometric</div>
-                <div class="bar"><div class="fill" style="width:50%;background:#d97706"></div></div>
-                <div>50%</div>
-                <div class="tag warn">WARN</div>
-              </div>
-              <div class="row">
-                <div><span class="dot" style="background:#ea580c"></span>RF / IQ</div>
-                <div class="bar"><div class="fill" style="width:82%;background:#dc2626"></div></div>
-                <div>82%</div>
-                <div class="tag crit">CRIT</div>
-              </div>
-              <div class="row">
-                <div><span class="dot" style="background:#059669"></span>EEG / ECG</div>
-                <div class="bar"><div class="fill" style="width:99%;background:#dc2626"></div></div>
-                <div>99%</div>
-                <div class="tag crit">CRIT</div>
-              </div>
-
-              <div class="metric-mini">
-                <div>
-                  <strong>&lt;50ms</strong>
-                  <span class="mono">latency</span>
-                </div>
-                <div>
-                  <strong>11</strong>
-                  <span class="mono">signals</span>
-                </div>
-                <div>
-                  <strong>99.9%</strong>
-                  <span class="mono">uptime</span>
-                </div>
-              </div>
+              <span class="pipe-tag tag-green">Running</span>
             </div>
+            <div class="pipe-arrow">↓ normalized stream</div>
+            <div class="pipe-step">
+              <div class="pipe-num">02</div>
+              <div>
+                <div class="pipe-name">SHIP Gateway</div>
+                <div class="pipe-desc">Normalize · Validate · Route · Dashboard</div>
+              </div>
+              <span class="pipe-tag tag-blue">Active</span>
+            </div>
+            <div class="pipe-arrow">↓ classified events</div>
+            <div class="pipe-step">
+              <div class="pipe-num">03</div>
+              <div>
+                <div class="pipe-name">Hermes Engine</div>
+                <div class="pipe-desc">Deterministic scoring · 14 behavior classes</div>
+              </div>
+              <span class="pipe-tag tag-purple">Analyzing</span>
+            </div>
+            <div class="pipe-arrow">↓ evidence-grade incidents</div>
+            <div class="pipe-step">
+              <div class="pipe-num">04</div>
+              <div>
+                <div class="pipe-name">Evidence Reporter</div>
+                <div class="pipe-desc">Incidents · PDF export · 30-day retention</div>
+              </div>
+              <span class="pipe-tag tag-red">3 Incidents</span>
+            </div>
+          </div>
+          <div class="pipe-metrics">
+            <div class="pipe-metric"><strong>&lt;50ms</strong><span>latency</span></div>
+            <div class="pipe-metric"><strong>11</strong><span>signals</span></div>
+            <div class="pipe-metric"><strong>99.9%</strong><span>uptime</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="signal-right">
-              <div class="terminal-line">OracleEvidenceFrame · BK23</div>
-              <div class="terminal-line">{ "signal": "rf_iq", "score": 86 }</div>
-              <div class="terminal-line">{ "status": "CRITICAL", "event": "jamming" }</div>
-              <div class="terminal-line">{ "signal": "modbus", "score": 82 }</div>
-              <div class="terminal-line">{ "event": "illegal_write_attempt" }</div>
-              <div class="terminal-line">{ "signal": "can", "score": 93 }</div>
-              <div class="terminal-line">{ "event": "bus_overload" }</div>
-              <div class="terminal-line">{ "signal": "eeg_ecg", "score": 99 }</div>
-              <div class="terminal-line">{ "event": "arrhythmia_pattern" }</div>
-              <div class="terminal-line">{ "output": "PDF evidence ready" }</div>
+    <!-- ══ WHO IS THIS FOR ══ -->
+    <section class="section alt" id="for-who">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Built for</div>
+            <h2>Is this<br>for you?</h2>
+          </div>
+          <p>
+            Sentinel is designed for organizations where signal integrity is mission-critical —
+            where a missed anomaly means downtime, compliance failure, or worse.
+            If your operation produces signals, Sentinel can protect it.
+          </p>
+        </div>
+        <div class="for-grid">
+          <div class="for-card">
+            <div class="for-icon">🏭</div>
+            <div>
+              <h3>Manufacturing Plants</h3>
+              <p>Monitor PLCs, motors, conveyors, and production lines. Detect failure signatures before they become downtime.</p>
+            </div>
+          </div>
+          <div class="for-card">
+            <div class="for-icon">⚡</div>
+            <div>
+              <h3>Energy Facilities</h3>
+              <p>Power grids, substations, pipelines. Continuous signal monitoring with evidence-grade incident records.</p>
+            </div>
+          </div>
+          <div class="for-card">
+            <div class="for-icon">🏥</div>
+            <div>
+              <h3>Medical Devices</h3>
+              <p>ECG/EEG monitoring systems, biometric sensors. Detect unstable signal behavior and generate audit-ready evidence.</p>
+            </div>
+          </div>
+          <div class="for-card">
+            <div class="for-icon">📡</div>
+            <div>
+              <h3>Telecom Infrastructure</h3>
+              <p>RF/IQ streams, network signals, spectrum monitoring. Identify jamming, drift, and anomalous behavior in real time.</p>
+            </div>
+          </div>
+          <div class="for-card">
+            <div class="for-icon">🛡️</div>
+            <div>
+              <h3>Defense Systems</h3>
+              <p>Air-gapped, classified environments. On-premise deployment with no external dependencies — by design.</p>
+            </div>
+          </div>
+          <div class="for-card">
+            <div class="for-icon">🔧</div>
+            <div>
+              <h3>Industrial IoT</h3>
+              <p>Distributed sensor networks, smart factories, industrial gateways. One agent, one platform, full coverage.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ══ PLATFORM LAYERS ══ -->
+    <section class="section" id="pipeline">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Platform</div>
+            <h2>Four layers.<br>One platform.</h2>
+          </div>
+          <p>
+            Sentinel is not a dashboard bolted onto a sensor. It is a purpose-built
+            pipeline — each layer engineered for its role, integrated end-to-end,
+            deployed entirely within your infrastructure. No external services.
+            No data leaving your perimeter.
+          </p>
+        </div>
+        <div class="layers">
+          <div class="layer">
+            <div><div class="layer-num mono">Layer 01</div><div class="layer-name">Edge Agent</div></div>
+            <div class="layer-desc">A lightweight binary that connects to your existing hardware — Modbus TCP, CAN Bus, MQTT, OPC-UA, Serial, Syslog, and more. No proprietary hardware required. Deploy once, connect anything. Fully configurable from the SHIP dashboard without touching the agent.</div>
+            <div class="layer-badge">11 connectors</div>
+          </div>
+          <div class="layer-connector mono">↓ normalized signal stream</div>
+          <div class="layer">
+            <div><div class="layer-num mono">Layer 02</div><div class="layer-name">SHIP Gateway</div></div>
+            <div class="layer-desc">The secure transport and normalization layer. SHIP receives raw signal frames from the Edge Agent, validates and normalizes them into a unified evidence schema, enforces access control, and routes structured data to the analysis engine. Your single pane of glass for signal operations.</div>
+            <div class="layer-badge">Real-time dashboard</div>
+          </div>
+          <div class="layer-connector mono">↓ classified signal events</div>
+          <div class="layer">
+            <div><div class="layer-num mono">Layer 03</div><div class="layer-name">Hermes Engine</div></div>
+            <div class="layer-desc">The deterministic analysis core. Hermes evaluates every signal event against 14 behavior classes — scoring severity, stability, timing, and anomaly intensity without probabilistic drift. Same input always produces the same output. Auditable, reproducible, defensible.</div>
+            <div class="layer-badge">Deterministic · 14 classes</div>
+          </div>
+          <div class="layer-connector mono">↓ evidence-grade incidents</div>
+          <div class="layer">
+            <div><div class="layer-num mono">Layer 04</div><div class="layer-name">Evidence Reporter</div></div>
+            <div class="layer-desc">Every meaningful anomaly becomes a structured incident with full context — timestamps, signal chain, severity score, behavior classification, and decision record. Export as PDF. Archive for audit. 30-day on-premise retention with configurable policies.</div>
+            <div class="layer-badge">PDF · Audit-ready</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ USE CASES ══ -->
+    <section class="section dark">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" style="color:#d8b15c">Use Cases</div>
+            <h2>Real scenarios.<br>Real evidence.</h2>
+          </div>
+          <p>
+            Sentinel is deployed where signal failures carry operational, legal, or
+            safety consequences. These are the scenarios it was built for.
+          </p>
+        </div>
+        <div class="cases-grid">
+          <div class="case-card">
+            <div class="case-top">
+              <span class="case-domain">Manufacturing</span>
+              <span class="case-status">Anomaly Detected</span>
+            </div>
+            <h3>Factory Line Vibration Monitoring</h3>
+            <p>Continuous vibration analysis on rotating machinery. Sentinel detected abnormal bearing resonance signatures 72 hours before physical failure — preventing unplanned downtime.</p>
+            <div class="case-finding">
+              <div class="label">Evidence Output</div>
+              <div class="value">Bearing failure precursor · ISO Zone C → D transition · PDF incident report generated</div>
+            </div>
+          </div>
+          <div class="case-card">
+            <div class="case-top">
+              <span class="case-domain">Medical</span>
+              <span class="case-status">Anomaly Detected</span>
+            </div>
+            <h3>Hospital Device ECG Monitoring</h3>
+            <p>Real-time ECG signal behavior analysis across patient monitoring devices. Sentinel identified arrhythmia-pattern artifacts and electrode dropout before clinical alert thresholds were crossed.</p>
+            <div class="case-finding">
+              <div class="label">Evidence Output</div>
+              <div class="value">Waveform behavior shift · Artifact classification · Timestamped evidence chain</div>
+            </div>
+          </div>
+          <div class="case-card">
+            <div class="case-top">
+              <span class="case-domain">Defense / Telecom</span>
+              <span class="case-status">Anomaly Detected</span>
+            </div>
+            <h3>RF Spectrum Integrity Monitoring</h3>
+            <p>Continuous RF/IQ stream analysis on communication infrastructure. Sentinel detected carrier drift and jamming-consistent behavior patterns in real time — with full evidence preservation.</p>
+            <div class="case-finding">
+              <div class="label">Evidence Output</div>
+              <div class="value">Jamming signature detected · SNR collapse recorded · Air-gapped PDF export</div>
+            </div>
+          </div>
+          <div class="case-card">
+            <div class="case-top">
+              <span class="case-domain">Energy / OT</span>
+              <span class="case-status">Anomaly Detected</span>
+            </div>
+            <h3>Substation Modbus Monitoring</h3>
+            <p>Modbus RTU monitoring across substation PLCs. Sentinel identified illegal function code sequences and rogue write attempts — classified as potential intrusion behavior.</p>
+            <div class="case-finding">
+              <div class="label">Evidence Output</div>
+              <div class="value">Illegal write attempt · Bus contention pattern · Incident record for SCADA audit</div>
+            </div>
+          </div>
+          <div class="case-card">
+            <div class="case-top">
+              <span class="case-domain">Industrial IoT</span>
+              <span class="case-status ok">Resolved</span>
+            </div>
+            <h3>Smart Factory IoT Sensor Network</h3>
+            <p>Multi-sensor IoT network monitoring across a distributed production environment. Dead sensors and stuck-value behavior identified automatically — eliminating silent failures.</p>
+            <div class="case-finding">
+              <div class="label">Evidence Output</div>
+              <div class="value">Dead sensor map · Stuck-value sequence · Maintenance dispatch evidence</div>
+            </div>
+          </div>
+          <div class="case-card">
+            <div class="case-top">
+              <span class="case-domain">Network / Security</span>
+              <span class="case-status">Anomaly Detected</span>
+            </div>
+            <h3>Network Timing Anomaly Detection</h3>
+            <p>Protocol-level network signal monitoring. Sentinel detected TTL instability and port-scan timing patterns consistent with reconnaissance activity — logged as structured evidence.</p>
+            <div class="case-finding">
+              <div class="label">Evidence Output</div>
+              <div class="value">TTL anomaly chain · Scan pattern classification · Evidence ready for SOC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONNECTOR ECOSYSTEM ══ -->
+    <section class="section alt" id="connectors">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Connectors</div>
+            <h2>Works with<br>what you have.</h2>
+          </div>
+          <p>
+            No rip-and-replace. No proprietary hardware. The Sentinel Edge Agent connects
+            to your existing infrastructure on day one. If your facility already has
+            sensors, PLCs, or gateways, Sentinel can start collecting signals immediately.
+          </p>
+        </div>
+        <div class="connector-grid">
+          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Modbus TCP / RTU</div><div class="conn-sub">PLCs, sensors, industrial gateways</div></div></div>
+          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">OPC-UA</div><div class="conn-sub">Modern industrial automation</div></div></div>
+          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">MQTT</div><div class="conn-sub">IoT brokers, distributed sensors</div></div></div>
+          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">CAN Bus</div><div class="conn-sub">Automotive, aerospace, machinery</div></div></div>
+          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Serial / RS-232</div><div class="conn-sub">Legacy devices, embedded systems</div></div></div>
+          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Syslog</div><div class="conn-sub">Network devices, security appliances</div></div></div>
+          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">TCP / UDP</div><div class="conn-sub">Custom streams, proprietary protocols</div></div></div>
+          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Kafka</div><div class="conn-sub">High-volume event streams</div></div></div>
+          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Webhook</div><div class="conn-sub">Third-party systems, APIs</div></div></div>
+          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">File / Log Tail</div><div class="conn-sub">Log files, structured exports</div></div></div>
+          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Vibration / Audio</div><div class="conn-sub">Accelerometers, microphones</div></div></div>
+          <div class="connector-item"><div class="conn-dot" style="background:#d97706"></div><div><div class="conn-name">Custom SDK</div><div class="conn-sub">Proprietary hardware integration</div></div></div>
+        </div>
+        <div class="connector-note">
+          <strong>No proprietary hardware required.</strong> Sentinel connects to sensors,
+          PLCs, and gateways you already own. New connectors can be added without
+          modifying the analysis pipeline — your infrastructure investment is protected.
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ COMPARISON TABLE ══ -->
+    <section class="section" id="compare">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Comparison</div>
+            <h2>Traditional<br>vs. Sentinel.</h2>
+          </div>
+          <p>
+            Most monitoring tools were built around dashboards and thresholds —
+            designed to alert, not to understand. Sentinel was built around evidence —
+            designed to classify behavior, preserve context, and produce outputs
+            that hold up under scrutiny.
+          </p>
+        </div>
+        <div class="compare-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="old">Traditional Monitoring</th>
+                <th class="new">RAINGAIA Sentinel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Detection method</td>
+                <td class="old"><span class="x-icon">—</span>Static thresholds</td>
+                <td class="new"><span class="check-icon">✓</span>Behavior-class intelligence</td>
+              </tr>
+              <tr>
+                <td>Analysis type</td>
+                <td class="old"><span class="x-icon">—</span>Probabilistic / ML drift</td>
+                <td class="new"><span class="check-icon">✓</span>Deterministic · reproducible</td>
+              </tr>
+              <tr>
+                <td>Deployment</td>
+                <td class="old"><span class="x-icon">—</span>Cloud-dependent</td>
+                <td class="new"><span class="check-icon">✓</span>Fully on-premise · air-gap ready</td>
+              </tr>
+              <tr>
+                <td>Signal coverage</td>
+                <td class="old"><span class="x-icon">—</span>Single domain</td>
+                <td class="new"><span class="check-icon">✓</span>11 signal types · multi-domain</td>
+              </tr>
+              <tr>
+                <td>Output format</td>
+                <td class="old"><span class="x-icon">—</span>Dashboard alerts only</td>
+                <td class="new"><span class="check-icon">✓</span>Structured incidents · PDF evidence</td>
+              </tr>
+              <tr>
+                <td>Hardware requirement</td>
+                <td class="old"><span class="x-icon">—</span>Proprietary sensors</td>
+                <td class="new"><span class="check-icon">✓</span>Any existing hardware</td>
+              </tr>
+              <tr>
+                <td>Data privacy</td>
+                <td class="old"><span class="x-icon">—</span>Data leaves your network</td>
+                <td class="new"><span class="check-icon">✓</span>Zero external data transfer</td>
+              </tr>
+              <tr>
+                <td>Audit readiness</td>
+                <td class="old"><span class="x-icon">—</span>Console logs only</td>
+                <td class="new"><span class="check-icon">✓</span>PDF-ready · legally defensible</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 11 SIGNALS ══ -->
     <section class="section alt" id="signals">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="eyebrow mono">Coverage</div>
-            <h2>11 signal types.<br>One premium engine.</h2>
+            <div class="eyebrow">Coverage</div>
+            <h2>11 signal types.<br>Zero blind spots.</h2>
           </div>
           <p>
-            Hermes is not a single-purpose dashboard. It is a multi-domain signal
-            intelligence platform built to normalize, classify, score, and export
-            evidence across industrial, medical, lab, telecom, serial, and network contexts.
+            Most monitoring tools are built for one domain. Sentinel covers all of them
+            under a single evidence model. If your facility produces a signal,
+            Sentinel can ingest, analyze, and preserve it as evidence.
           </p>
         </div>
-
         <div class="signal-grid">
-          <div class="signal-box">
-            <h3><span class="signal-line" style="background:#c9861a"></span>CAN Bus</h3>
-            <p>Bus load, timing anomalies, replay patterns, frame integrity, arbitration stress, and transport-layer irregularities.</p>
-          </div>
-          <div class="signal-box">
-            <h3><span class="signal-line" style="background:#2563eb"></span>Modbus RTU</h3>
-            <p>CRC integrity, missed polling, illegal function codes, stuck registers, timeout storms, rogue writes, and bus contention patterns.</p>
-          </div>
-          <div class="signal-box">
-            <h3><span class="signal-line" style="background:#be185d"></span>Audio</h3>
-            <p>Dropouts, clipping, flatline behavior, gain instability, channel imbalance, and audible signal degradation signatures.</p>
-          </div>
-          <div class="signal-box">
-            <h3><span class="signal-line" style="background:#b91c1c"></span>Biometric</h3>
-            <p>Heart rate variability, oxygen saturation drift, timing gaps, sensor instability, and behavior-level biological anomaly patterns.</p>
-          </div>
-          <div class="signal-box">
-            <h3><span class="signal-line" style="background:#059669"></span>EEG / ECG</h3>
-            <p>Arrhythmia patterns, electrode dropout, signal saturation, timing inconsistency, waveform behavior shifts, and artifact detection.</p>
-          </div>
-          <div class="signal-box">
-            <h3><span class="signal-line" style="background:#0f766e"></span>IoT Sensor</h3>
-            <p>Out-of-range values, dead sensors, stuck values, burst polling, unstable transitions, and low-trust source behavior.</p>
-          </div>
-          <div class="signal-box">
-            <h3><span class="signal-line" style="background:#c2410c"></span>RF / IQ</h3>
-            <p>Carrier drift, jamming behavior, IQ imbalance, SNR collapse, spectrum instability, and degraded radio signal confidence.</p>
-          </div>
-          <div class="signal-box">
-            <h3><span class="signal-line" style="background:#7e22ce"></span>Vibration</h3>
-            <p>Imbalance, bearing failure, resonance signatures, kurtosis shifts, ISO-style zone behavior, and physical degradation mapping.</p>
-          </div>
-          <div class="signal-box">
-            <h3><span class="signal-line" style="background:#0e7490"></span>Lab Science</h3>
-            <p>Instrument drift, contamination spikes, calibration loss, baseline deviation, unstable measurement behavior, and evidence traceability.</p>
-          </div>
-          <div class="signal-box">
-            <h3><span class="signal-line" style="background:#3730a3"></span>Serial</h3>
-            <p>Framing errors, overflow patterns, baud mismatch, line noise, packet loss, and transport instability across constrained links.</p>
-          </div>
-          <div class="signal-box" style="grid-column:1 / -1">
-            <h3><span class="signal-line" style="background:#6d28d9"></span>Network</h3>
-            <p>Packet loss, latency anomalies, TTL instability, flood behavior, port scan patterns, and protocol-level signal intelligence built for modern operations.</p>
-          </div>
+          <div class="signal-box"><h3><span class="signal-dot" style="background:#c9861a"></span>CAN Bus</h3><p>Bus load, timing anomalies, replay patterns, frame integrity, arbitration stress, and transport-layer irregularities.</p></div>
+          <div class="signal-box"><h3><span class="signal-dot" style="background:#2563eb"></span>Modbus RTU</h3><p>CRC integrity, missed polling, illegal function codes, stuck registers, timeout storms, rogue writes, and bus contention patterns.</p></div>
+          <div class="signal-box"><h3><span class="signal-dot" style="background:#be185d"></span>Audio</h3><p>Dropouts, clipping, flatline behavior, gain instability, channel imbalance, and audible signal degradation signatures.</p></div>
+          <div class="signal-box"><h3><span class="signal-dot" style="background:#b91c1c"></span>Biometric</h3><p>Heart rate variability, oxygen saturation drift, timing gaps, sensor instability, and behavior-level biological anomaly patterns.</p></div>
+          <div class="signal-box"><h3><span class="signal-dot" style="background:#059669"></span>EEG / ECG</h3><p>Arrhythmia patterns, electrode dropout, signal saturation, timing inconsistency, waveform behavior shifts, and artifact detection.</p></div>
+          <div class="signal-box"><h3><span class="signal-dot" style="background:#0f766e"></span>IoT Sensor</h3><p>Out-of-range values, dead sensors, stuck values, burst polling, unstable transitions, and low-trust source behavior.</p></div>
+          <div class="signal-box"><h3><span class="signal-dot" style="background:#c2410c"></span>RF / IQ</h3><p>Carrier drift, jamming behavior, IQ imbalance, SNR collapse, spectrum instability, and degraded radio signal confidence.</p></div>
+          <div class="signal-box"><h3><span class="signal-dot" style="background:#7e22ce"></span>Vibration</h3><p>Imbalance, bearing failure, resonance signatures, kurtosis shifts, ISO-style zone behavior, and physical degradation mapping.</p></div>
+          <div class="signal-box"><h3><span class="signal-dot" style="background:#0e7490"></span>Lab Science</h3><p>Instrument drift, contamination spikes, calibration loss, baseline deviation, unstable measurement behavior, and evidence traceability.</p></div>
+          <div class="signal-box"><h3><span class="signal-dot" style="background:#3730a3"></span>Serial</h3><p>Framing errors, overflow patterns, baud mismatch, line noise, packet loss, and transport instability across constrained links.</p></div>
+          <div class="signal-box" style="grid-column:1 / -1"><h3><span class="signal-dot" style="background:#6d28d9"></span>Network</h3><p>Packet loss, latency anomalies, TTL instability, flood behavior, port scan patterns, and protocol-level signal intelligence built for modern operations.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="platform">
+    <!-- ══ TRUST BADGES ══ -->
+    <section class="section dark">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="eyebrow mono">Platform Architecture</div>
-            <h2>Production-ready.<br>Evidence-first.</h2>
+            <div class="eyebrow" style="color:#d8b15c">Architecture</div>
+            <h2>Built on<br>trust by design.</h2>
           </div>
           <p>
-            Hermes is designed as a premium operational platform: ingest, normalize,
-            classify, score, and export. It is built not only to detect anomalies,
-            but to preserve them as evidence users can download, review, and act on.
+            Every architectural decision in Sentinel was made with one question in mind:
+            what happens if this is deployed in a classified facility, a hospital, or
+            a power station? The answer shaped everything.
           </p>
         </div>
-
-        <div class="platform-grid">
-          <div class="platform-item">
-            <div class="num mono">01</div>
-            <h3>Multi-signal normalization</h3>
-            <p>Each signal type is normalized through a dedicated path so diverse sources can be evaluated inside one unified evidence model.</p>
+        <div class="trust-grid">
+          <div class="trust-badge">
+            <div class="trust-badge-icon">🔒</div>
+            <div class="trust-badge-text">
+              <strong>On-premise deployment</strong>
+              <span>Runs entirely on your hardware. No cloud infrastructure required.</span>
+            </div>
           </div>
-          <div class="platform-item">
-            <div class="num mono">02</div>
-            <h3>Behavior-class scoring</h3>
-            <p>Hermes does not stop at raw alerts. It evaluates signal behavior, severity, stability, confidence, timing, and anomaly intensity.</p>
+          <div class="trust-badge">
+            <div class="trust-badge-icon">✈️</div>
+            <div class="trust-badge-text">
+              <strong>Air-gapped environments</strong>
+              <span>Designed for fully isolated networks. No internet dependency.</span>
+            </div>
           </div>
-          <div class="platform-item">
-            <div class="num mono">03</div>
-            <h3>OracleEvidenceFrame output</h3>
-            <p>Every meaningful event can be converted into a structured evidence object for diagnostics, reporting, and downstream decision workflows.</p>
+          <div class="trust-badge">
+            <div class="trust-badge-icon">🚫</div>
+            <div class="trust-badge-text">
+              <strong>No cloud telemetry</strong>
+              <span>Zero external API calls. Your signal data never leaves your perimeter.</span>
+            </div>
           </div>
-          <div class="platform-item">
-            <div class="num mono">04</div>
-            <h3>PDF-ready reporting</h3>
-            <p>Users do not need to memorize console logs. Hermes supports downloadable, portable evidence outputs for review, audit, and action.</p>
+          <div class="trust-badge">
+            <div class="trust-badge-icon">📂</div>
+            <div class="trust-badge-text">
+              <strong>Evidence retention</strong>
+              <span>30-day on-premise incident storage with configurable retention policies.</span>
+            </div>
           </div>
-          <div class="platform-item">
-            <div class="num mono">05</div>
-            <h3>Industrial-grade visibility</h3>
-            <p>From Modbus and CAN Bus to RF, medical, lab, and network signals, the platform keeps critical systems visible under one premium interface.</p>
+          <div class="trust-badge">
+            <div class="trust-badge-icon">📄</div>
+            <div class="trust-badge-text">
+              <strong>PDF audit exports</strong>
+              <span>Every incident exportable as a structured, court-ready PDF document.</span>
+            </div>
           </div>
-          <div class="platform-item">
-            <div class="num mono">06</div>
-            <h3>Enterprise presentation</h3>
-            <p>Designed to look and behave like a real product, not a lab prototype: premium UI, clear sections, credible structure, and commercial readiness.</p>
+          <div class="trust-badge">
+            <div class="trust-badge-icon">🔁</div>
+            <div class="trust-badge-text">
+              <strong>Deterministic outputs</strong>
+              <span>Same input always produces the same result. Fully reproducible and auditable.</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section alt" id="pricing">
+    <!-- ══ REQUEST ACCESS ══ -->
+    <section class="section" id="contact">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow mono">Pricing</div>
-            <h2>Premium product.<br>Clear packaging.</h2>
-          </div>
-          <p>
-            The value is in the engine, the signal coverage, and the evidence workflow.
-            Pricing should reflect the seriousness of the product, not make it look like a commodity tool.
+        <div class="request-block">
+          <div class="eyebrow" style="color:#d8b15c">Get Started</div>
+          <h2>Request a technical<br>consultation.</h2>
+          <p class="request-sub">
+            Sentinel deployments begin with a scoped conversation. We work with your
+            team to understand your signal environment, hardware constraints, and
+            evidence requirements — before any commitment.
           </p>
-        </div>
 
-        <div class="pricing-grid">
-          <div class="price">
-            <div class="name mono">Starter</div>
-            <div class="amount">$499</div>
-            <div class="period">per month</div>
-            <ul>
-              <li>3 signal types</li>
-              <li>Single workspace</li>
-              <li>Upload analysis</li>
-              <li>PDF export</li>
-              <li>Email support</li>
-            </ul>
-            <a href="#contact" class="btn btn-ghost">Start Trial</a>
+          <div id="requestForm">
+            <div class="form-grid">
+              <div class="form-field">
+                <label>Full Name</label>
+                <input type="text" id="f-name" placeholder="Jane Smith" />
+              </div>
+              <div class="form-field">
+                <label>Work Email</label>
+                <input type="email" id="f-email" placeholder="jane@company.com" />
+              </div>
+              <div class="form-field">
+                <label>Organization</label>
+                <input type="text" id="f-org" placeholder="Acme Industries" />
+              </div>
+              <div class="form-field">
+                <label>Domain / Industry</label>
+                <select id="f-domain">
+                  <option value="">— Select —</option>
+                  <option>Industrial / Manufacturing</option>
+                  <option>Defense / Government</option>
+                  <option>Energy / Critical Infrastructure</option>
+                  <option>Medical / Healthcare</option>
+                  <option>Telecommunications</option>
+                  <option>Transportation / Automotive</option>
+                  <option>Research / Laboratory</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-field full">
+                <label>What are you monitoring? (optional)</label>
+                <textarea id="f-message" placeholder="e.g. 40 Modbus PLCs across 3 facilities, need local anomaly detection and evidence export for compliance reporting…"></textarea>
+              </div>
+            </div>
+            <div class="form-footer">
+              <span class="form-note mono">Response within 1 business day.</span>
+              <button class="btn btn-gold" onclick="submitForm()">Schedule Architecture Call →</button>
+            </div>
           </div>
 
-          <div class="price featured">
-            <div class="badge mono">Most Popular</div>
-            <div class="name mono">Professional</div>
-            <div class="amount">$1,990</div>
-            <div class="period">per month</div>
-            <ul>
-              <li>All 11 signal types</li>
-              <li>Full diagnostics console</li>
-              <li>Evidence workflows</li>
-              <li>Priority anomaly review</li>
-              <li>Advanced reporting</li>
-            </ul>
-            <a href="#contact" class="btn btn-primary">Start Free Trial</a>
-          </div>
-
-          <div class="price">
-            <div class="name mono">Enterprise</div>
-            <div class="amount">$7,500</div>
-            <div class="period">per month</div>
-            <ul>
-              <li>Multi-team deployment</li>
-              <li>Unlimited signal coverage</li>
-              <li>Custom retention</li>
-              <li>Dedicated onboarding</li>
-              <li>Commercial SLA</li>
-            </ul>
-            <a href="#contact" class="btn btn-ghost">Contact Sales</a>
-          </div>
-
-          <div class="price">
-            <div class="name mono">Defense / Gov</div>
-            <div class="amount">Custom</div>
-            <div class="period">private deployment</div>
-            <ul>
-              <li>On-premise options</li>
-              <li>Air-gapped environments</li>
-              <li>High-trust reporting</li>
-              <li>Custom evidence models</li>
-              <li>Dedicated program support</li>
-            </ul>
-            <a href="#contact" class="btn btn-ghost">Request Proposal</a>
+          <div class="form-success" id="formSuccess">
+            <div class="check">✓</div>
+            <h3>Request received.</h3>
+            <p>We'll review your submission and reach out within 1 business day.<br>
+            You can also reach us directly at <strong>raingaia@outlook.com</strong></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="cta-block">
-          <div class="eyebrow mono" style="color:#d8b15c">Get Started</div>
-          <h2>
-            Upload signal data.
-            Detect anomalies.
-            Export evidence.
-          </h2>
-          <p>
-            Hermes is built for operators, engineers, and organizations that need more than a dashboard.
-            It delivers signal intelligence with downloadable outputs users can review, share, and trust.
-          </p>
-          <div class="hero-actions" style="margin-top:30px">
-            <a class="btn btn-primary" href="#contact">Start Free Trial</a>
-            <a class="btn btn-ghost" href="#signals" style="background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.18); color:#fff">View Signal Coverage</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="footer" id="contact">
+  <footer class="footer">
     <div class="container">
       <div class="footer-card">
         <div class="footer-grid">
           <div class="footer-brand">
             <h3>RAINGAIA LLC</h3>
-            <div class="sub">Hermes Evidence Engine</div>
-            <div class="tagline mono">
-              Signal Intelligence · Anomaly Detection · Evidence Systems
-            </div>
+            <div class="sub">RAINGAIA Sentinel Platform</div>
+            <div class="tagline">Signal Intelligence · Anomaly Detection · Evidence Systems</div>
           </div>
-
           <div class="footer-contact">
             <div>7901 4th St N Ste 300</div>
             <div>St. Petersburg, FL 33702</div>
             <div>United States</div>
-
-            <div style="margin-top:14px">
-              Contact: <strong>raingaia@outlook.com</strong>
-            </div>
-            <div>
-              Phone: <strong>+1 571-651-8099</strong>
-            </div>
+            <div style="margin-top:12px">Contact: <strong>raingaia@outlook.com</strong></div>
+            <div>Phone: <strong>+1 571-651-8099</strong></div>
           </div>
         </div>
-
-        <div class="footer-bottom mono">
+        <div class="footer-bottom">
           <span>© 2026 RAINGAIA LLC · All Rights Reserved</span>
-          <span>Hermes Evidence Engine — Premium Multi-Signal Intelligence Platform</span>
+          <span>RAINGAIA Sentinel — End-to-end Signal Intelligence Platform</span>
         </div>
       </div>
     </div>
@@ -1103,11 +833,23 @@
 
   <script>
     const toggle = document.getElementById('mobileToggle');
-    const nav = document.getElementById('mainNav');
+    const nav    = document.getElementById('mainNav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
 
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
+    function submitForm() {
+      const name   = document.getElementById('f-name').value.trim();
+      const email  = document.getElementById('f-email').value.trim();
+      const org    = document.getElementById('f-org').value.trim();
+      const domain = document.getElementById('f-domain').value;
+      const msg    = document.getElementById('f-message').value.trim();
+      if (!name || !email || !org) { alert('Please fill in your name, email, and organization.'); return; }
+      const subject = encodeURIComponent('Sentinel Consultation Request — ' + org);
+      const body    = encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nOrg: '+org+'\nDomain: '+domain+'\n\n'+(msg||'(no additional details)'));
+      window.location.href = 'mailto:raingaia@outlook.com?subject='+subject+'&body='+body;
+      document.getElementById('requestForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
   </script>
+
 </body>
 </html>
