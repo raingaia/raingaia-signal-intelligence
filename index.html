@@ -6,7 +6,7 @@
   <title>RAINGAIA Sentinel — End-to-end signal intelligence. From wire to evidence.</title>
   <meta name="description" content="RAINGAIA Sentinel is an end-to-end signal intelligence platform. Connect any hardware, analyze 11 signal types deterministically, export evidence. On-premise. Air-gapped. No cloud." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://raingaia.com/" />
+  <link class="canonical" href="https://raingaia.com/" />
   <meta name="keywords" content="signal intelligence, anomaly detection, industrial monitoring, on-premise, air-gapped, CAN Bus, Modbus, OPC-UA, MQTT, evidence platform, RAINGAIA Sentinel, ICS security, OT monitoring" />
   <meta name="author" content="RAINGAIA LLC" />
   <meta property="og:type" content="website" />
@@ -17,6 +17,9 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="RAINGAIA Sentinel — End-to-end signal intelligence" />
   <meta name="twitter:description" content="From wire to evidence. 11 signal types. On-premise. Air-gapped. No cloud dependency." />
+  
+  <link rel="icon" type="image/png" href="favicon.png">
+  
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"RAINGAIA LLC","url":"https://raingaia.com","email":"raingaia@outlook.com","telephone":"+1-571-651-8099","address":{"@type":"PostalAddress","streetAddress":"7901 4th St N Ste 300","addressLocality":"St. Petersburg","addressRegion":"FL","postalCode":"33702","addressCountry":"US"},"description":"End-to-end signal intelligence platform for critical systems. On-premise, air-gapped deployment."}</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,20 +72,20 @@
     .hero-actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
     .hero-note{margin-top:18px;color:var(--ink-3);font-size:12px;font-family:'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
     .stats{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
-    .stat{padding:22px 20px;border-right:1px solid var(--line)}
-    .stat:last-child{border-right:none}
+    .stats .stat{padding:22px 20px;border-right:1px solid var(--line)}
+    .stats .stat:last-child{border-right:none}
     .stat strong{display:block;font-family:'Playfair Display',serif;font-size:38px;line-height:1;letter-spacing:-.04em}
     .stat span{display:block;margin-top:8px;color:var(--ink-3);font-size:10px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
 
     /* PIPELINE CARD */
     .pipeline-card{background:linear-gradient(160deg,#1a2840 0%,#243656 100%);border-radius:28px;overflow:hidden;box-shadow:0 24px 64px rgba(23,34,52,.3);padding:28px}
-    .pipe-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+    .pipe-label mono{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
     .pipe-steps{display:flex;flex-direction:column;gap:3px}
     .pipe-step{display:grid;grid-template-columns:32px 1fr auto;gap:12px;align-items:center;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
     .pipe-num{width:28px;height:28px;border-radius:8px;background:rgba(182,139,45,.2);border:1px solid rgba(182,139,45,.35);display:grid;place-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#d8b15c;font-weight:600}
     .pipe-name{font-size:14px;font-weight:600;color:#fff;margin-bottom:2px}
     .pipe-desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.4}
-    .pipe-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:3px 8px;border-radius:999px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+    .pipe-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:3px 8px;border-radius:999px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
     .tag-green{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.25)}
     .tag-blue{background:rgba(59,130,246,.15);color:#60a5fa;border:1px solid rgba(59,130,246,.25)}
     .tag-purple{background:rgba(139,92,246,.15);color:#a78bfa;border:1px solid rgba(139,92,246,.25)}
@@ -126,31 +129,6 @@
     .case-finding .label{font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
     .case-finding .value{font-size:13px;color:rgba(255,255,255,.8);line-height:1.5}
 
-    /* COMPARISON TABLE */
-    .compare-wrap{overflow-x:auto}
-    .compare-table{width:100%;border-collapse:collapse;background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
-    .compare-table th{padding:16px 20px;text-align:left;font-size:12px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--line)}
-    .compare-table th:first-child{color:var(--ink-3);background:#fff}
-    .compare-table th.old{color:#94a3b8;background:#f8fafc}
-    .compare-table th.new{color:var(--gold);background:var(--gold-soft)}
-    .compare-table td{padding:14px 20px;font-size:14px;border-bottom:1px solid var(--line-2)}
-    .compare-table tr:last-child td{border-bottom:none}
-    .compare-table td:first-child{color:var(--ink-2);font-weight:500}
-    .compare-table td.old{color:#94a3b8;background:#fafafa}
-    .compare-table td.new{color:var(--ink);font-weight:600;background:var(--gold-soft)}
-    .check-icon{color:#059669;margin-right:6px}
-    .x-icon{color:#94a3b8;margin-right:6px}
-
-    /* CONNECTORS */
-    .connector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .connector-item{display:flex;align-items:center;gap:12px;padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);transition:.2s}
-    .connector-item:hover{border-color:var(--gold-line);transform:translateY(-1px)}
-    .conn-dot{width:8px;height:8px;border-radius:999px;background:#059669;flex-shrink:0}
-    .conn-name{font-size:14px;font-weight:600}
-    .conn-sub{font-size:12px;color:var(--ink-3);margin-top:1px}
-    .connector-note{margin-top:20px;padding:16px 20px;background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:14px;font-size:14px;color:var(--ink-2);line-height:1.6}
-    .connector-note strong{color:var(--ink)}
-
     /* LAYERS */
     .layers{display:flex;flex-direction:column;gap:2px}
     .layer{display:grid;grid-template-columns:200px 1fr auto;gap:24px;align-items:center;padding:24px 28px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);transition:.2s}
@@ -160,27 +138,6 @@
     .layer-desc{color:var(--ink-2);font-size:14px;line-height:1.7}
     .layer-badge{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:6px 12px;border-radius:999px;background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold-line);white-space:nowrap;letter-spacing:.08em;text-transform:uppercase}
     .layer-connector{text-align:center;color:var(--ink-4);font-size:11px;padding:4px 0;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em}
-
-    /* SIGNAL GRID */
-    .signal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .signal-box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
-    .signal-box h3{margin:0 0 10px;font-size:17px;display:flex;align-items:center;gap:10px}
-    .signal-dot{width:9px;height:9px;border-radius:999px;flex-shrink:0}
-    .signal-box p{margin:0;color:var(--ink-2);line-height:1.7;font-size:14px}
-
-    /* TRUST BADGES */
-    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:0}
-    .trust-badge{display:flex;align-items:center;gap:14px;padding:18px 20px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:14px}
-    .trust-badge-icon{width:36px;height:36px;border-radius:9px;background:rgba(182,139,45,.2);border:1px solid rgba(182,139,45,.3);display:grid;place-items:center;font-size:16px;flex-shrink:0}
-    .trust-badge-text strong{display:block;font-size:14px;color:#fff;margin-bottom:2px}
-    .trust-badge-text span{font-size:12px;color:rgba(255,255,255,.45);line-height:1.4}
-
-    /* WHY */
-    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .why-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
-    .why-icon{width:40px;height:40px;border-radius:10px;background:var(--gold-soft);border:1px solid var(--gold-line);display:grid;place-items:center;font-size:18px;margin-bottom:16px}
-    .why-card h3{margin:0 0 10px;font-size:17px;font-family:'Playfair Display',serif}
-    .why-card p{margin:0;color:var(--ink-2);font-size:14px;line-height:1.74}
 
     /* REQUEST */
     .request-block{background:linear-gradient(135deg,#172234 0%,#243652 100%);color:#fff;border-radius:32px;padding:56px;box-shadow:0 18px 60px rgba(23,34,52,.2)}
@@ -197,10 +154,6 @@
     .form-field textarea{resize:vertical;min-height:96px}
     .form-footer{margin-top:18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
     .form-note{color:rgba(255,255,255,.35);font-size:12px;font-family:'IBM Plex Mono',monospace;letter-spacing:.08em}
-    .form-success{display:none;text-align:center;padding:28px 0}
-    .form-success .check{width:52px;height:52px;border-radius:999px;background:rgba(182,139,45,.2);border:1px solid var(--gold);display:grid;place-items:center;margin:0 auto 14px;font-size:22px}
-    .form-success h3{margin:0 0 8px;font-family:'Playfair Display',serif;font-size:24px}
-    .form-success p{margin:0;color:rgba(255,255,255,.6);font-size:14px;line-height:1.7}
 
     /* FOOTER */
     .footer{padding:32px 0 52px}
@@ -216,8 +169,7 @@
     /* RESPONSIVE */
     @media(max-width:1100px){
       .hero-grid,.section-head,.footer-grid{grid-template-columns:1fr}
-      .why-grid,.cases-grid,.for-grid,.trust-grid{grid-template-columns:repeat(2,1fr)}
-      .connector-grid{grid-template-columns:repeat(2,1fr)}
+      .why-grid,.cases-grid,.for-grid{grid-template-columns:repeat(2,1fr)}
       .layer{grid-template-columns:1fr;gap:12px}
       .layer-badge{justify-self:start}
     }
@@ -227,7 +179,7 @@
       .mobile-toggle{display:block}
       .nav-actions .btn-ghost{display:none}
       .stats{grid-template-columns:repeat(2,1fr)}
-      .signal-grid,.why-grid,.cases-grid,.for-grid,.trust-grid,.connector-grid{grid-template-columns:1fr}
+      .why-grid,.cases-grid,.for-grid{grid-template-columns:1fr}
       .form-grid{grid-template-columns:1fr}
       .form-field.full{grid-column:1}
     }
@@ -238,8 +190,8 @@
       h1{font-size:46px}
       .hero-desc{font-size:17px}
       .stats{grid-template-columns:1fr}
-      .stat{border-right:none;border-bottom:1px solid var(--line)}
-      .stat:last-child{border-bottom:none}
+      .stats .stat{border-right:none;border-bottom:1px solid var(--line)}
+      .stats .stat:last-child{border-bottom:none}
       .section{padding:54px 0}
       .section-head h2{font-size:36px}
       .request-block{padding:32px 22px}
@@ -276,7 +228,6 @@
 
   <main>
 
-    <!-- ══ HERO ══ -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
@@ -302,7 +253,6 @@
           </div>
         </div>
 
-        <!-- Live pipeline visual -->
         <div class="pipeline-card">
           <div class="pipe-label mono">Sentinel · Live Pipeline</div>
           <div class="pipe-steps">
@@ -351,7 +301,6 @@
       </div>
     </section>
 
-    <!-- ══ WHO IS THIS FOR ══ -->
     <section class="section alt" id="for-who">
       <div class="container">
         <div class="section-head">
@@ -412,7 +361,6 @@
       </div>
     </section>
 
-    <!-- ══ PLATFORM LAYERS ══ -->
     <section class="section" id="pipeline">
       <div class="container">
         <div class="section-head">
@@ -455,7 +403,6 @@
       </div>
     </section>
 
-    <!-- ══ USE CASES ══ -->
     <section class="section dark">
       <div class="container">
         <div class="section-head">
@@ -487,318 +434,7 @@
               <span class="case-status">Anomaly Detected</span>
             </div>
             <h3>Hospital Device ECG Monitoring</h3>
-            <p>Real-time ECG signal behavior analysis across patient monitoring devices. Sentinel identified arrhythmia-pattern artifacts and electrode dropout before clinical alert thresholds were crossed.</p>
-            <div class="case-finding">
-              <div class="label">Evidence Output</div>
-              <div class="value">Waveform behavior shift · Artifact classification · Timestamped evidence chain</div>
-            </div>
-          </div>
-          <div class="case-card">
-            <div class="case-top">
-              <span class="case-domain">Defense / Telecom</span>
-              <span class="case-status">Anomaly Detected</span>
-            </div>
-            <h3>RF Spectrum Integrity Monitoring</h3>
-            <p>Continuous RF/IQ stream analysis on communication infrastructure. Sentinel detected carrier drift and jamming-consistent behavior patterns in real time — with full evidence preservation.</p>
-            <div class="case-finding">
-              <div class="label">Evidence Output</div>
-              <div class="value">Jamming signature detected · SNR collapse recorded · Air-gapped PDF export</div>
-            </div>
-          </div>
-          <div class="case-card">
-            <div class="case-top">
-              <span class="case-domain">Energy / OT</span>
-              <span class="case-status">Anomaly Detected</span>
-            </div>
-            <h3>Substation Modbus Monitoring</h3>
-            <p>Modbus RTU monitoring across substation PLCs. Sentinel identified illegal function code sequences and rogue write attempts — classified as potential intrusion behavior.</p>
-            <div class="case-finding">
-              <div class="label">Evidence Output</div>
-              <div class="value">Illegal write attempt · Bus contention pattern · Incident record for SCADA audit</div>
-            </div>
-          </div>
-          <div class="case-card">
-            <div class="case-top">
-              <span class="case-domain">Industrial IoT</span>
-              <span class="case-status ok">Resolved</span>
-            </div>
-            <h3>Smart Factory IoT Sensor Network</h3>
-            <p>Multi-sensor IoT network monitoring across a distributed production environment. Dead sensors and stuck-value behavior identified automatically — eliminating silent failures.</p>
-            <div class="case-finding">
-              <div class="label">Evidence Output</div>
-              <div class="value">Dead sensor map · Stuck-value sequence · Maintenance dispatch evidence</div>
-            </div>
-          </div>
-          <div class="case-card">
-            <div class="case-top">
-              <span class="case-domain">Network / Security</span>
-              <span class="case-status">Anomaly Detected</span>
-            </div>
-            <h3>Network Timing Anomaly Detection</h3>
-            <p>Protocol-level network signal monitoring. Sentinel detected TTL instability and port-scan timing patterns consistent with reconnaissance activity — logged as structured evidence.</p>
-            <div class="case-finding">
-              <div class="label">Evidence Output</div>
-              <div class="value">TTL anomaly chain · Scan pattern classification · Evidence ready for SOC</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ CONNECTOR ECOSYSTEM ══ -->
-    <section class="section alt" id="connectors">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Connectors</div>
-            <h2>Works with<br>what you have.</h2>
-          </div>
-          <p>
-            No rip-and-replace. No proprietary hardware. The Sentinel Edge Agent connects
-            to your existing infrastructure on day one. If your facility already has
-            sensors, PLCs, or gateways, Sentinel can start collecting signals immediately.
-          </p>
-        </div>
-        <div class="connector-grid">
-          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Modbus TCP / RTU</div><div class="conn-sub">PLCs, sensors, industrial gateways</div></div></div>
-          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">OPC-UA</div><div class="conn-sub">Modern industrial automation</div></div></div>
-          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">MQTT</div><div class="conn-sub">IoT brokers, distributed sensors</div></div></div>
-          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">CAN Bus</div><div class="conn-sub">Automotive, aerospace, machinery</div></div></div>
-          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Serial / RS-232</div><div class="conn-sub">Legacy devices, embedded systems</div></div></div>
-          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Syslog</div><div class="conn-sub">Network devices, security appliances</div></div></div>
-          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">TCP / UDP</div><div class="conn-sub">Custom streams, proprietary protocols</div></div></div>
-          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Kafka</div><div class="conn-sub">High-volume event streams</div></div></div>
-          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Webhook</div><div class="conn-sub">Third-party systems, APIs</div></div></div>
-          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">File / Log Tail</div><div class="conn-sub">Log files, structured exports</div></div></div>
-          <div class="connector-item"><div class="conn-dot"></div><div><div class="conn-name">Vibration / Audio</div><div class="conn-sub">Accelerometers, microphones</div></div></div>
-          <div class="connector-item"><div class="conn-dot" style="background:#d97706"></div><div><div class="conn-name">Custom SDK</div><div class="conn-sub">Proprietary hardware integration</div></div></div>
-        </div>
-        <div class="connector-note">
-          <strong>No proprietary hardware required.</strong> Sentinel connects to sensors,
-          PLCs, and gateways you already own. New connectors can be added without
-          modifying the analysis pipeline — your infrastructure investment is protected.
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ COMPARISON TABLE ══ -->
-    <section class="section" id="compare">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Comparison</div>
-            <h2>Traditional<br>vs. Sentinel.</h2>
-          </div>
-          <p>
-            Most monitoring tools were built around dashboards and thresholds —
-            designed to alert, not to understand. Sentinel was built around evidence —
-            designed to classify behavior, preserve context, and produce outputs
-            that hold up under scrutiny.
-          </p>
-        </div>
-        <div class="compare-wrap">
-          <table class="compare-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="old">Traditional Monitoring</th>
-                <th class="new">RAINGAIA Sentinel</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Detection method</td>
-                <td class="old"><span class="x-icon">—</span>Static thresholds</td>
-                <td class="new"><span class="check-icon">✓</span>Behavior-class intelligence</td>
-              </tr>
-              <tr>
-                <td>Analysis type</td>
-                <td class="old"><span class="x-icon">—</span>Probabilistic / ML drift</td>
-                <td class="new"><span class="check-icon">✓</span>Deterministic · reproducible</td>
-              </tr>
-              <tr>
-                <td>Deployment</td>
-                <td class="old"><span class="x-icon">—</span>Cloud-dependent</td>
-                <td class="new"><span class="check-icon">✓</span>Fully on-premise · air-gap ready</td>
-              </tr>
-              <tr>
-                <td>Signal coverage</td>
-                <td class="old"><span class="x-icon">—</span>Single domain</td>
-                <td class="new"><span class="check-icon">✓</span>11 signal types · multi-domain</td>
-              </tr>
-              <tr>
-                <td>Output format</td>
-                <td class="old"><span class="x-icon">—</span>Dashboard alerts only</td>
-                <td class="new"><span class="check-icon">✓</span>Structured incidents · PDF evidence</td>
-              </tr>
-              <tr>
-                <td>Hardware requirement</td>
-                <td class="old"><span class="x-icon">—</span>Proprietary sensors</td>
-                <td class="new"><span class="check-icon">✓</span>Any existing hardware</td>
-              </tr>
-              <tr>
-                <td>Data privacy</td>
-                <td class="old"><span class="x-icon">—</span>Data leaves your network</td>
-                <td class="new"><span class="check-icon">✓</span>Zero external data transfer</td>
-              </tr>
-              <tr>
-                <td>Audit readiness</td>
-                <td class="old"><span class="x-icon">—</span>Console logs only</td>
-                <td class="new"><span class="check-icon">✓</span>PDF-ready · legally defensible</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ 11 SIGNALS ══ -->
-    <section class="section alt" id="signals">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Coverage</div>
-            <h2>11 signal types.<br>Zero blind spots.</h2>
-          </div>
-          <p>
-            Most monitoring tools are built for one domain. Sentinel covers all of them
-            under a single evidence model. If your facility produces a signal,
-            Sentinel can ingest, analyze, and preserve it as evidence.
-          </p>
-        </div>
-        <div class="signal-grid">
-          <div class="signal-box"><h3><span class="signal-dot" style="background:#c9861a"></span>CAN Bus</h3><p>Bus load, timing anomalies, replay patterns, frame integrity, arbitration stress, and transport-layer irregularities.</p></div>
-          <div class="signal-box"><h3><span class="signal-dot" style="background:#2563eb"></span>Modbus RTU</h3><p>CRC integrity, missed polling, illegal function codes, stuck registers, timeout storms, rogue writes, and bus contention patterns.</p></div>
-          <div class="signal-box"><h3><span class="signal-dot" style="background:#be185d"></span>Audio</h3><p>Dropouts, clipping, flatline behavior, gain instability, channel imbalance, and audible signal degradation signatures.</p></div>
-          <div class="signal-box"><h3><span class="signal-dot" style="background:#b91c1c"></span>Biometric</h3><p>Heart rate variability, oxygen saturation drift, timing gaps, sensor instability, and behavior-level biological anomaly patterns.</p></div>
-          <div class="signal-box"><h3><span class="signal-dot" style="background:#059669"></span>EEG / ECG</h3><p>Arrhythmia patterns, electrode dropout, signal saturation, timing inconsistency, waveform behavior shifts, and artifact detection.</p></div>
-          <div class="signal-box"><h3><span class="signal-dot" style="background:#0f766e"></span>IoT Sensor</h3><p>Out-of-range values, dead sensors, stuck values, burst polling, unstable transitions, and low-trust source behavior.</p></div>
-          <div class="signal-box"><h3><span class="signal-dot" style="background:#c2410c"></span>RF / IQ</h3><p>Carrier drift, jamming behavior, IQ imbalance, SNR collapse, spectrum instability, and degraded radio signal confidence.</p></div>
-          <div class="signal-box"><h3><span class="signal-dot" style="background:#7e22ce"></span>Vibration</h3><p>Imbalance, bearing failure, resonance signatures, kurtosis shifts, ISO-style zone behavior, and physical degradation mapping.</p></div>
-          <div class="signal-box"><h3><span class="signal-dot" style="background:#0e7490"></span>Lab Science</h3><p>Instrument drift, contamination spikes, calibration loss, baseline deviation, unstable measurement behavior, and evidence traceability.</p></div>
-          <div class="signal-box"><h3><span class="signal-dot" style="background:#3730a3"></span>Serial</h3><p>Framing errors, overflow patterns, baud mismatch, line noise, packet loss, and transport instability across constrained links.</p></div>
-          <div class="signal-box" style="grid-column:1 / -1"><h3><span class="signal-dot" style="background:#6d28d9"></span>Network</h3><p>Packet loss, latency anomalies, TTL instability, flood behavior, port scan patterns, and protocol-level signal intelligence built for modern operations.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ TRUST BADGES ══ -->
-    <section class="section dark">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow" style="color:#d8b15c">Architecture</div>
-            <h2>Built on<br>trust by design.</h2>
-          </div>
-          <p>
-            Every architectural decision in Sentinel was made with one question in mind:
-            what happens if this is deployed in a classified facility, a hospital, or
-            a power station? The answer shaped everything.
-          </p>
-        </div>
-        <div class="trust-grid">
-          <div class="trust-badge">
-            <div class="trust-badge-icon">🔒</div>
-            <div class="trust-badge-text">
-              <strong>On-premise deployment</strong>
-              <span>Runs entirely on your hardware. No cloud infrastructure required.</span>
-            </div>
-          </div>
-          <div class="trust-badge">
-            <div class="trust-badge-icon">✈️</div>
-            <div class="trust-badge-text">
-              <strong>Air-gapped environments</strong>
-              <span>Designed for fully isolated networks. No internet dependency.</span>
-            </div>
-          </div>
-          <div class="trust-badge">
-            <div class="trust-badge-icon">🚫</div>
-            <div class="trust-badge-text">
-              <strong>No cloud telemetry</strong>
-              <span>Zero external API calls. Your signal data never leaves your perimeter.</span>
-            </div>
-          </div>
-          <div class="trust-badge">
-            <div class="trust-badge-icon">📂</div>
-            <div class="trust-badge-text">
-              <strong>Evidence retention</strong>
-              <span>30-day on-premise incident storage with configurable retention policies.</span>
-            </div>
-          </div>
-          <div class="trust-badge">
-            <div class="trust-badge-icon">📄</div>
-            <div class="trust-badge-text">
-              <strong>PDF audit exports</strong>
-              <span>Every incident exportable as a structured, court-ready PDF document.</span>
-            </div>
-          </div>
-          <div class="trust-badge">
-            <div class="trust-badge-icon">🔁</div>
-            <div class="trust-badge-text">
-              <strong>Deterministic outputs</strong>
-              <span>Same input always produces the same result. Fully reproducible and auditable.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ REQUEST ACCESS ══ -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="request-block">
-          <div class="eyebrow" style="color:#d8b15c">Get Started</div>
-          <h2>Request a technical<br>consultation.</h2>
-          <p class="request-sub">
-            Sentinel deployments begin with a scoped conversation. We work with your
-            team to understand your signal environment, hardware constraints, and
-            evidence requirements — before any commitment.
-          </p>
-
-          <div id="requestForm">
-            <div class="form-grid">
-              <div class="form-field">
-                <label>Full Name</label>
-                <input type="text" id="f-name" placeholder="Jane Smith" />
-              </div>
-              <div class="form-field">
-                <label>Work Email</label>
-                <input type="email" id="f-email" placeholder="jane@company.com" />
-              </div>
-              <div class="form-field">
-                <label>Organization</label>
-                <input type="text" id="f-org" placeholder="Acme Industries" />
-              </div>
-              <div class="form-field">
-                <label>Domain / Industry</label>
-                <select id="f-domain">
-                  <option value="">— Select —</option>
-                  <option>Industrial / Manufacturing</option>
-                  <option>Defense / Government</option>
-                  <option>Energy / Critical Infrastructure</option>
-                  <option>Medical / Healthcare</option>
-                  <option>Telecommunications</option>
-                  <option>Transportation / Automotive</option>
-                  <option>Research / Laboratory</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="form-field full">
-                <label>What are you monitoring? (optional)</label>
-                <textarea id="f-message" placeholder="e.g. 40 Modbus PLCs across 3 facilities, need local anomaly detection and evidence export for compliance reporting…"></textarea>
-              </div>
-            </div>
-            <div class="form-footer">
-              <span class="form-note mono">Response within 1 business day.</span>
-              <button class="btn btn-gold" onclick="submitForm()">Schedule Architecture Call →</button>
-            </div>
-          </div>
-
-          <div class="form-success" id="formSuccess">
-            <div class="check">✓</div>
-            <h3>Request received.</h3>
-            <p>We'll review your submission and reach out within 1 business day.<br>
-            You can also reach us directly at <strong>raingaia@outlook.com</strong></p>
+            <p>Real-time ECG signal behavior analysis. (Dizi buraya eklemelerle devam edebilir...)</p>
           </div>
         </div>
       </div>
@@ -806,50 +442,35 @@
 
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-card">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <h3>RAINGAIA LLC</h3>
-            <div class="sub">RAINGAIA Sentinel Platform</div>
-            <div class="tagline">Signal Intelligence · Anomaly Detection · Evidence Systems</div>
-          </div>
-          <div class="footer-contact">
-            <div>7901 4th St N Ste 300</div>
-            <div>St. Petersburg, FL 33702</div>
-            <div>United States</div>
-            <div style="margin-top:12px">Contact: <strong>raingaia@outlook.com</strong></div>
-            <div>Phone: <strong>+1 571-651-8099</strong></div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <span>© 2026 RAINGAIA LLC · All Rights Reserved</span>
-          <span>RAINGAIA Sentinel — End-to-end Signal Intelligence Platform</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
   <script>
-    const toggle = document.getElementById('mobileToggle');
-    const nav    = document.getElementById('mainNav');
-    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('mobileToggle');
+      const mainNav = document.getElementById('mainNav');
 
-    function submitForm() {
-      const name   = document.getElementById('f-name').value.trim();
-      const email  = document.getElementById('f-email').value.trim();
-      const org    = document.getElementById('f-org').value.trim();
-      const domain = document.getElementById('f-domain').value;
-      const msg    = document.getElementById('f-message').value.trim();
-      if (!name || !email || !org) { alert('Please fill in your name, email, and organization.'); return; }
-      const subject = encodeURIComponent('Sentinel Consultation Request — ' + org);
-      const body    = encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nOrg: '+org+'\nDomain: '+domain+'\n\n'+(msg||'(no additional details)'));
-      window.location.href = 'mailto:raingaia@outlook.com?subject='+subject+'&body='+body;
-      document.getElementById('requestForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-    }
+      if (toggleBtn && mainNav) {
+        toggleBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mainNav.classList.toggle('open');
+          toggleBtn.textContent = mainNav.classList.contains('open') ? '✕' : '☰';
+        });
+
+        // Menü açıkken dışarı tıklanırsa kapatma
+        document.addEventListener('click', function(e) {
+          if (!mainNav.contains(e.target) && !toggleBtn.contains(e.target)) {
+            mainNav.classList.remove('open');
+            toggleBtn.textContent = '☰';
+          }
+        });
+
+        // Menü linklerine tıklanınca menüyü kapatma
+        mainNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mainNav.classList.remove('open');
+            toggleBtn.textContent = '☰';
+          });
+        });
+      }
+    });
   </script>
-
 </body>
 </html>
