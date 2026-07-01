@@ -6,8 +6,8 @@
   <title>RAINGAIA Sentinel — End-to-end signal intelligence. From wire to evidence.</title>
   <meta name="description" content="RAINGAIA Sentinel is an end-to-end signal intelligence platform. Connect any hardware, analyze 11 signal types deterministically, export evidence. On-premise. Air-gapped. No cloud." />
   <meta name="robots" content="index, follow" />
-  <link class="canonical" href="https://raingaia.com/" />
-  <meta name="keywords" content="signal intelligence, anomaly detection, industrial monitoring, on-premise, air-gapped, CAN Bus, Modbus, OPC-UA, MQTT, evidence platform, RAINGAIA Sentinel, ICS security, OT monitoring" />
+  <link rel="canonical" href="https://raingaia.com/" />
+  <meta name="keywords" content="signal intelligence, anomaly detection, industrial monitoring, on-premise, air-gapped, CAN Bus, Modbus RTU, Serial, Network, RF/IQ, biometric signal analysis, EEG ECG monitoring, evidence platform, RAINGAIA Sentinel, ICS security, OT monitoring" />
   <meta name="author" content="RAINGAIA LLC" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://raingaia.com/" />
@@ -17,9 +17,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="RAINGAIA Sentinel — End-to-end signal intelligence" />
   <meta name="twitter:description" content="From wire to evidence. 11 signal types. On-premise. Air-gapped. No cloud dependency." />
-  
-  <link rel="icon" type="image/png" href="favicon.png">
-  
+
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"RAINGAIA LLC","url":"https://raingaia.com","email":"raingaia@outlook.com","telephone":"+1-571-651-8099","address":{"@type":"PostalAddress","streetAddress":"7901 4th St N Ste 300","addressLocality":"St. Petersburg","addressRegion":"FL","postalCode":"33702","addressCountry":"US"},"description":"End-to-end signal intelligence platform for critical systems. On-premise, air-gapped deployment."}</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,20 +48,30 @@
     .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
 
     /* NAV */
-    .topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(247,245,240,.9);border-bottom:1px solid rgba(221,229,238,.9)}
-    .topbar-inner{height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand-mark{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(145deg,#1d2a40,#314868);color:#fff;font-family:'Playfair Display',serif;font-size:18px;font-weight:800;box-shadow:var(--shadow)}
-    .brand-text strong{display:block;font-family:'Playfair Display',serif;font-size:22px;line-height:1;letter-spacing:-.03em}
-    .brand-text span{display:block;margin-top:4px;color:var(--gold);font-size:10px;font-family:'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
-    nav{display:flex;align-items:center;gap:26px;color:var(--ink-2);font-size:15px}
+    .topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(247,245,240,.92);border-bottom:1px solid rgba(221,229,238,.9)}
+    .topbar::before{content:"";display:block;height:3px;background:linear-gradient(90deg,#1d2a40 0%,var(--gold) 50%,#1d2a40 100%)}
+    .topbar-inner{height:80px;display:flex;align-items:center;gap:22px}
+    .brand{display:flex;align-items:center;gap:14px;flex-shrink:0}
+    .brand-mark{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(145deg,#1d2a40,#314868);color:#fff;font-family:'Playfair Display',serif;font-size:18px;font-weight:800;box-shadow:var(--shadow);border:1px solid rgba(182,139,45,.45)}
+    .brand-text strong{display:block;font-family:'Playfair Display',serif;font-size:21px;line-height:1;letter-spacing:-.03em}
+    .brand-text span{display:block;margin-top:4px;color:var(--gold);font-size:9.5px;font-family:'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+    .nav-divider{width:1px;height:30px;background:var(--line);flex-shrink:0}
+    nav{display:flex;align-items:center;gap:28px;flex:1}
+    nav a{position:relative;padding-bottom:3px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;transition:.2s}
+    nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:.25s}
     nav a:hover{color:var(--ink)}
-    .nav-actions{display:flex;align-items:center;gap:10px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;height:46px;padding:0 20px;font-weight:600;font-size:15px;transition:.2s ease;border:1px solid transparent;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif}
+    nav a:hover::after{width:100%}
+    .telemetry-chip{display:flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);flex-shrink:0}
+    .telemetry-dot{width:6px;height:6px;border-radius:50%;background:#34d399;flex-shrink:0;animation:pulse 2.2s infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.55)}70%{box-shadow:0 0 0 7px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+    .nav-actions{display:flex;align-items:center;gap:18px;flex-shrink:0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;height:44px;padding:0 20px;font-weight:600;font-size:14.5px;transition:.2s ease;border:1px solid transparent;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif}
     .btn-primary{background:var(--ink);color:#fff;box-shadow:0 8px 24px rgba(23,34,52,.18)}
     .btn-primary:hover{transform:translateY(-1px)}
-    .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}
-    .btn-ghost:hover{border-color:var(--ink-3)}
+    .btn-text{background:none;border:none;box-shadow:none;height:auto;padding:0;color:var(--ink-2);font-weight:500}
+    .btn-text::after{content:"→";display:inline-block;transition:.2s;margin-left:2px}
+    .btn-text:hover{color:var(--ink)}
+    .btn-text:hover::after{transform:translateX(3px)}
     .btn-gold{background:var(--gold);color:#fff;border:none;box-shadow:0 8px 24px rgba(182,139,45,.3)}
     .btn-gold:hover{transform:translateY(-1px)}
     .mobile-toggle{display:none;background:none;border:none;font-size:26px;color:var(--ink);cursor:pointer}
@@ -79,7 +94,7 @@
 
     /* PIPELINE CARD */
     .pipeline-card{background:linear-gradient(160deg,#1a2840 0%,#243656 100%);border-radius:28px;overflow:hidden;box-shadow:0 24px 64px rgba(23,34,52,.3);padding:28px}
-    .pipe-label mono{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+    .pipe-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
     .pipe-steps{display:flex;flex-direction:column;gap:3px}
     .pipe-step{display:grid;grid-template-columns:32px 1fr auto;gap:12px;align-items:center;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
     .pipe-num{width:28px;height:28px;border-radius:8px;background:rgba(182,139,45,.2);border:1px solid rgba(182,139,45,.35);display:grid;place-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#d8b15c;font-weight:600}
@@ -117,7 +132,7 @@
 
     /* USE CASES */
     .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .case-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:26px;transition:.2s}
+    .case-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:26px;transition:.2s;display:flex;flex-direction:column}
     .case-card:hover{background:rgba(255,255,255,.11);border-color:rgba(182,139,45,.35)}
     .case-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
     .case-domain{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.12em;text-transform:uppercase}
@@ -125,7 +140,7 @@
     .case-status.ok{background:rgba(16,185,129,.15);color:#34d399;border-color:rgba(16,185,129,.25)}
     .case-card h3{margin:0 0 10px;font-family:'Playfair Display',serif;font-size:20px;color:#fff;line-height:1.2}
     .case-card p{margin:0 0 18px;color:rgba(255,255,255,.55);font-size:14px;line-height:1.7}
-    .case-finding{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px 14px}
+    .case-finding{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px 14px;margin-top:auto}
     .case-finding .label{font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
     .case-finding .value{font-size:13px;color:rgba(255,255,255,.8);line-height:1.5}
 
@@ -139,7 +154,49 @@
     .layer-badge{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:6px 12px;border-radius:999px;background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold-line);white-space:nowrap;letter-spacing:.08em;text-transform:uppercase}
     .layer-connector{text-align:center;color:var(--ink-4);font-size:11px;padding:4px 0;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em}
 
-    /* REQUEST */
+    /* SIGNALS GRID */
+    .signals-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .signal-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow);transition:.2s;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif;width:100%}
+    .signal-card:hover{border-color:var(--gold-line);transform:translateY(-2px)}
+    .signal-card:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+    .signal-card.active{border-color:var(--gold);background:var(--gold-soft);box-shadow:0 12px 30px rgba(182,139,45,.16)}
+    .signal-num{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
+    .signal-live-dot{width:6px;height:6px;border-radius:50%;background:#34d399;opacity:0;transition:.2s}
+    .signal-card.active .signal-live-dot{opacity:1;animation:pulse 2.2s infinite}
+    .signal-name{font-family:'Playfair Display',serif;font-size:17px;margin-bottom:6px}
+    .signal-desc{color:var(--ink-3);font-size:12.5px;line-height:1.6}
+
+    /* SIGNAL DEMO PANEL */
+    .signal-demo{margin-top:20px;background:linear-gradient(160deg,#1a2840 0%,#243656 100%);border-radius:28px;padding:28px;box-shadow:0 24px 64px rgba(23,34,52,.3)}
+    .signal-demo-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+    .signal-demo-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+    .signal-demo-name{font-family:'Playfair Display',serif;font-size:26px;color:#fff}
+    .signal-demo canvas{width:100%;height:150px;display:block;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+    .signal-demo-metrics{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .signal-demo-metrics .m{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px;text-align:center}
+    .signal-demo-metrics .m strong{display:block;font-family:'Playfair Display',serif;font-size:20px;color:#fff;line-height:1.2}
+    .signal-demo-metrics .m span{display:block;margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.35);letter-spacing:.1em;text-transform:uppercase}
+    .signal-feed{margin-top:16px;display:flex;flex-direction:column;gap:8px;min-height:52px}
+    .signal-feed-empty{color:rgba(255,255,255,.3);font-size:12.5px;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;padding:14px 2px}
+    .signal-feed-item{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);border-radius:10px;padding:12px 14px;animation:feedIn .35s ease}
+    .signal-feed-item .fi-top{display:flex;justify-content:space-between;gap:10px;margin-bottom:5px}
+    .signal-feed-item .fi-class{font-family:'IBM Plex Mono',monospace;font-size:9px;color:#f87171;letter-spacing:.08em;text-transform:uppercase}
+    .signal-feed-item .fi-time{font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.35);letter-spacing:.08em}
+    .signal-feed-item .fi-text{font-size:13px;color:rgba(255,255,255,.85);line-height:1.5}
+    @keyframes feedIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
+    /* COMPARE TABLE */
+    .compare-table{width:100%;border-collapse:collapse;background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+    .compare-table th,.compare-table td{padding:18px 22px;text-align:left;font-size:14.5px;border-bottom:1px solid var(--line)}
+    .compare-table tr:last-child td{border-bottom:none}
+    .compare-table th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);background:var(--line-2);font-weight:600}
+    .compare-table td:first-child{color:var(--ink-2);font-weight:600;width:28%}
+    .compare-table td.no{color:var(--ink-4)}
+    .compare-table td.no::before{content:"✕  ";color:#c96a6a}
+    .compare-table td.yes{color:var(--ink)}
+    .compare-table td.yes::before{content:"✓  ";color:var(--gold);font-weight:700}
+
+    /* REQUEST / CONTACT */
     .request-block{background:linear-gradient(135deg,#172234 0%,#243652 100%);color:#fff;border-radius:32px;padding:56px;box-shadow:0 18px 60px rgba(23,34,52,.2)}
     .request-block h2{margin:0;font-family:'Playfair Display',serif;font-size:50px;line-height:1.02;letter-spacing:-.04em}
     .request-sub{margin:16px 0 36px;max-width:560px;color:rgba(255,255,255,.7);font-size:17px;line-height:1.8}
@@ -154,6 +211,8 @@
     .form-field textarea{resize:vertical;min-height:96px}
     .form-footer{margin-top:18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
     .form-note{color:rgba(255,255,255,.35);font-size:12px;font-family:'IBM Plex Mono',monospace;letter-spacing:.08em}
+    .form-status{margin-top:14px;font-size:13px;color:#d8b15c;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;display:none}
+    .form-status.show{display:block}
 
     /* FOOTER */
     .footer{padding:32px 0 52px}
@@ -169,19 +228,30 @@
     /* RESPONSIVE */
     @media(max-width:1100px){
       .hero-grid,.section-head,.footer-grid{grid-template-columns:1fr}
-      .why-grid,.cases-grid,.for-grid{grid-template-columns:repeat(2,1fr)}
+      .for-grid,.cases-grid{grid-template-columns:repeat(2,1fr)}
+      .signals-grid{grid-template-columns:repeat(3,1fr)}
       .layer{grid-template-columns:1fr;gap:12px}
       .layer-badge{justify-self:start}
+      .compare-table{font-size:13px}
+    }
+    @media(max-width:1180px){
+      .telemetry-chip{display:none}
     }
     @media(max-width:920px){
-      nav{display:none;position:absolute;left:24px;right:24px;top:84px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}
+      .topbar-inner{position:relative}
+      nav{display:none;position:absolute;left:24px;right:24px;top:80px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:2px}
       nav.open{display:flex}
+      nav a{padding:12px 10px;font-size:12px}
+      nav a::after{display:none}
+      .nav-divider{display:none}
       .mobile-toggle{display:block}
-      .nav-actions .btn-ghost{display:none}
+      .nav-actions .btn-text{display:none}
       .stats{grid-template-columns:repeat(2,1fr)}
-      .why-grid,.cases-grid,.for-grid{grid-template-columns:1fr}
+      .for-grid,.cases-grid{grid-template-columns:1fr}
+      .signals-grid{grid-template-columns:repeat(2,1fr)}
       .form-grid{grid-template-columns:1fr}
       .form-field.full{grid-column:1}
+      .compare-table{display:block;overflow-x:auto;white-space:nowrap}
     }
     @media(max-width:680px){
       .container{width:min(var(--max),calc(100% - 28px))}
@@ -194,6 +264,10 @@
       .stats .stat:last-child{border-bottom:none}
       .section{padding:54px 0}
       .section-head h2{font-size:36px}
+      .signals-grid{grid-template-columns:1fr}
+      .signal-demo{padding:20px}
+      .signal-demo-metrics{grid-template-columns:1fr}
+      .signal-demo-name{font-size:21px}
       .request-block{padding:32px 22px}
       .request-block h2{font-size:36px}
       .footer-bottom{flex-direction:column}
@@ -212,6 +286,7 @@
         </div>
       </a>
       <button class="mobile-toggle" id="mobileToggle">☰</button>
+      <div class="nav-divider"></div>
       <nav id="mainNav">
         <a href="#for-who">Who it's for</a>
         <a href="#pipeline">Platform</a>
@@ -219,9 +294,11 @@
         <a href="#compare">vs. Traditional</a>
         <a href="#contact">Contact</a>
       </nav>
+      <div class="telemetry-chip"><span class="telemetry-dot"></span>System Nominal</div>
+      <div class="nav-divider"></div>
       <div class="nav-actions">
-        <a class="btn btn-ghost" href="#pipeline">How it works</a>
-        <a class="btn btn-primary" href="#contact">Request Consultation</a>
+        <a class="btn btn-text" href="#pipeline">How it works</a>
+        <a class="btn btn-gold" href="#contact">Request Consultation</a>
       </div>
     </div>
   </header>
@@ -254,13 +331,13 @@
         </div>
 
         <div class="pipeline-card">
-          <div class="pipe-label mono">Sentinel · Live Pipeline</div>
+          <div class="pipe-label">Sentinel · Live Pipeline</div>
           <div class="pipe-steps">
             <div class="pipe-step">
               <div class="pipe-num">01</div>
               <div>
                 <div class="pipe-name">Edge Agent</div>
-                <div class="pipe-desc">Modbus · CAN · MQTT · OPC-UA · Serial · RF/IQ · +5 more</div>
+                <div class="pipe-desc">CAN · Modbus · Serial · Network · Audio · RF/IQ · +5 more</div>
               </div>
               <span class="pipe-tag tag-green">Running</span>
             </div>
@@ -434,13 +511,186 @@
               <span class="case-status">Anomaly Detected</span>
             </div>
             <h3>Hospital Device ECG Monitoring</h3>
-            <p>Real-time ECG signal behavior analysis. (Dizi buraya eklemelerle devam edebilir...)</p>
+            <p>Real-time ECG signal behavior analysis across a bedside monitor fleet. Sentinel flagged an irregular QRS interval drift pattern consistent with lead degradation — hours before the device would have failed a routine check, and before any patient-facing alarm fired.</p>
+            <div class="case-finding">
+              <div class="label">Evidence Output</div>
+              <div class="value">Lead degradation signature · Behavior Class 09 (Signal Drift) · Timestamped incident chain · PDF export for biomedical engineering audit</div>
+            </div>
+          </div>
+          <div class="case-card">
+            <div class="case-top">
+              <span class="case-domain">Energy</span>
+              <span class="case-status ok">Resolved</span>
+            </div>
+            <h3>Substation Load Signature Monitoring</h3>
+            <p>Continuous current and voltage monitoring across a regional substation. Sentinel identified a recurring harmonic distortion pattern tied to a failing transformer tap changer, isolated before it triggered a wider grid disturbance.</p>
+            <div class="case-finding">
+              <div class="label">Evidence Output</div>
+              <div class="value">Harmonic distortion signature · Tap-changer wear correlation · Maintenance window scheduled · Full evidence chain archived on-premise</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="section alt" id="signals">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Coverage</div>
+            <h2>11 signal types.<br>One agent.</h2>
+          </div>
+          <p>
+            The Edge Agent speaks the protocols your hardware already uses.
+            No proprietary sensors, no forced rip-and-replace — Sentinel connects
+            to what you have and normalizes it into a single evidence schema.
+          </p>
+        </div>
+        <div class="signals-grid" id="signalsGrid">
+          <button class="signal-card active" data-signal="0"><div class="signal-num"><span>01</span><span class="signal-live-dot"></span></div><div class="signal-name">CAN Bus</div><div class="signal-desc">Vehicle, machinery, and embedded control networks.</div></button>
+          <button class="signal-card" data-signal="1"><div class="signal-num"><span>02</span><span class="signal-live-dot"></span></div><div class="signal-name">Modbus RTU</div><div class="signal-desc">Industrial PLC and controller polling, register-level.</div></button>
+          <button class="signal-card" data-signal="2"><div class="signal-num"><span>03</span><span class="signal-live-dot"></span></div><div class="signal-name">Serial</div><div class="signal-desc">RS-232/485 instrumentation and point-to-point links.</div></button>
+          <button class="signal-card" data-signal="3"><div class="signal-num"><span>04</span><span class="signal-live-dot"></span></div><div class="signal-name">Network</div><div class="signal-desc">Packet-level network traffic and protocol behavior.</div></button>
+          <button class="signal-card" data-signal="4"><div class="signal-num"><span>05</span><span class="signal-live-dot"></span></div><div class="signal-name">Audio</div><div class="signal-desc">Microphone and acoustic signal analysis.</div></button>
+          <button class="signal-card" data-signal="5"><div class="signal-num"><span>06</span><span class="signal-live-dot"></span></div><div class="signal-name">Biometric</div><div class="signal-desc">Physiological signal streams for identity and state verification.</div></button>
+          <button class="signal-card" data-signal="6"><div class="signal-num"><span>07</span><span class="signal-live-dot"></span></div><div class="signal-name">EEG / ECG</div><div class="signal-desc">Bioelectrical signal monitoring for neurological and cardiac behavior.</div></button>
+          <button class="signal-card" data-signal="7"><div class="signal-num"><span>08</span><span class="signal-live-dot"></span></div><div class="signal-name">IoT Sensor</div><div class="signal-desc">Distributed sensor telemetry from connected devices.</div></button>
+          <button class="signal-card" data-signal="8"><div class="signal-num"><span>09</span><span class="signal-live-dot"></span></div><div class="signal-name">RF / IQ</div><div class="signal-desc">Software-defined radio spectrum and jamming detection.</div></button>
+          <button class="signal-card" data-signal="9"><div class="signal-num"><span>10</span><span class="signal-live-dot"></span></div><div class="signal-name">Vibration</div><div class="signal-desc">Accelerometer data for rotating machinery health.</div></button>
+          <button class="signal-card" data-signal="10"><div class="signal-num"><span>11</span><span class="signal-live-dot"></span></div><div class="signal-name">Lab Science</div><div class="signal-desc">Laboratory instrument output and experimental signal capture.</div></button>
+        </div>
+
+        <div class="signal-demo">
+          <div class="signal-demo-header">
+            <div>
+              <div class="signal-demo-eyebrow">Live Signal Feed · Simulated</div>
+              <div class="signal-demo-name" id="demoName">CAN Bus</div>
+            </div>
+            <span class="case-status ok" id="demoStatus">Nominal</span>
+          </div>
+          <canvas id="signalCanvas"></canvas>
+          <div class="signal-demo-metrics">
+            <div class="m"><strong id="demoValue">—</strong><span id="demoUnit">value</span></div>
+            <div class="m"><strong id="demoClass">—</strong><span>behavior class</span></div>
+            <div class="m"><strong>&lt;50ms</strong><span>detection latency</span></div>
+          </div>
+          <div class="signal-feed" id="demoFeed">
+            <div class="signal-feed-empty">Monitoring live stream — evidence will appear here the moment a behavior deviation is detected.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="compare">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Comparison</div>
+            <h2>Sentinel vs.<br>traditional monitoring.</h2>
+          </div>
+          <p>
+            Most monitoring stacks were built for dashboards, not evidence.
+            Sentinel was built from the ground up to produce defensible,
+            reproducible answers — without sending your data anywhere.
+          </p>
+        </div>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Traditional Monitoring</th>
+              <th>RAINGAIA Sentinel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Deployment</td><td class="no">Cloud-dependent</td><td class="yes">On-premise, air-gapped</td></tr>
+            <tr><td>Detection logic</td><td class="no">Fixed thresholds</td><td class="yes">Deterministic behavior classes</td></tr>
+            <tr><td>Reproducibility</td><td class="no">Probabilistic drift</td><td class="yes">Same input → same output, always</td></tr>
+            <tr><td>Data sovereignty</td><td class="no">Vendor-controlled</td><td class="yes">Stays inside your perimeter</td></tr>
+            <tr><td>Evidence export</td><td class="no">Screenshots, logs</td><td class="yes">Structured PDF, audit-ready</td></tr>
+            <tr><td>Hardware integration</td><td class="no">Proprietary sensors</td><td class="yes">Modbus, CAN, MQTT, OPC-UA & more</td></tr>
+            <tr><td>Latency</td><td class="no">Seconds to minutes</td><td class="yes">&lt;50ms P99</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact">
+      <div class="container">
+        <div class="request-block">
+          <h2>Request a technical<br>consultation.</h2>
+          <p class="request-sub">
+            Tell us about your signal environment. We'll walk through what
+            Sentinel would look like deployed on your infrastructure —
+            no sales script, straight to the engineering questions.
+          </p>
+          <form id="consultForm">
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="f-name">Name</label>
+                <input id="f-name" type="text" name="name" placeholder="Your full name" required>
+              </div>
+              <div class="form-field">
+                <label for="f-company">Company</label>
+                <input id="f-company" type="text" name="company" placeholder="Organization name">
+              </div>
+              <div class="form-field">
+                <label for="f-email">Email</label>
+                <input id="f-email" type="email" name="email" placeholder="you@company.com" required>
+              </div>
+              <div class="form-field">
+                <label for="f-industry">Industry</label>
+                <select id="f-industry" name="industry">
+                  <option value="">Select one</option>
+                  <option>Manufacturing</option>
+                  <option>Energy</option>
+                  <option>Medical</option>
+                  <option>Telecom</option>
+                  <option>Defense</option>
+                  <option>Industrial IoT</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-field full">
+                <label for="f-message">What are you trying to solve?</label>
+                <textarea id="f-message" name="message" placeholder="Briefly describe your signal environment and the problem you're facing..."></textarea>
+              </div>
+            </div>
+            <div class="form-footer">
+              <button type="submit" class="btn btn-gold">Send Request</button>
+              <span class="form-note">We reply within 1 business day</span>
+            </div>
+            <div class="form-status" id="formStatus">Opening your email client with these details…</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>RAINGAIA Sentinel</h3>
+            <div class="sub">End-to-end signal intelligence, on your infrastructure.</div>
+            <div class="tagline">From wire to evidence</div>
+          </div>
+          <div class="footer-contact">
+            <div><strong>RAINGAIA LLC</strong></div>
+            <div>7901 4th St N Ste 300, St. Petersburg, FL 33702, US</div>
+            <div><a href="mailto:raingaia@outlook.com">raingaia@outlook.com</a></div>
+            <div><a href="tel:+15716518099">+1 (571) 651-8099</a></div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 RAINGAIA LLC. All rights reserved.</span>
+          <span>On-premise · Air-gapped · Evidence-ready</span>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -454,7 +704,6 @@
           toggleBtn.textContent = mainNav.classList.contains('open') ? '✕' : '☰';
         });
 
-        // Menü açıkken dışarı tıklanırsa kapatma
         document.addEventListener('click', function(e) {
           if (!mainNav.contains(e.target) && !toggleBtn.contains(e.target)) {
             mainNav.classList.remove('open');
@@ -462,7 +711,6 @@
           }
         });
 
-        // Menü linklerine tıklanınca menüyü kapatma
         mainNav.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             mainNav.classList.remove('open');
@@ -470,7 +718,236 @@
           });
         });
       }
+
+      // Contact form: static-site friendly fallback via mailto
+      const form = document.getElementById('consultForm');
+      const status = document.getElementById('formStatus');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = document.getElementById('f-name').value;
+          const company = document.getElementById('f-company').value;
+          const email = document.getElementById('f-email').value;
+          const industry = document.getElementById('f-industry').value;
+          const message = document.getElementById('f-message').value;
+
+          const subject = encodeURIComponent('Sentinel Consultation Request — ' + (company || name));
+          const body = encodeURIComponent(
+            'Name: ' + name + '\n' +
+            'Company: ' + company + '\n' +
+            'Email: ' + email + '\n' +
+            'Industry: ' + industry + '\n\n' +
+            'Message:\n' + message
+          );
+
+          status.classList.add('show');
+          window.location.href = 'mailto:raingaia@outlook.com?subject=' + subject + '&body=' + body;
+        });
+      }
+
+      // Live Signal Demo — simulated wire-to-evidence engine
+      initSignalDemo();
     });
+
+    function initSignalDemo() {
+      const grid = document.getElementById('signalsGrid');
+      const canvas = document.getElementById('signalCanvas');
+      if (!grid || !canvas) return;
+
+      const ctx = canvas.getContext('2d');
+      const demoName = document.getElementById('demoName');
+      const demoStatus = document.getElementById('demoStatus');
+      const demoValue = document.getElementById('demoValue');
+      const demoUnit = document.getElementById('demoUnit');
+      const demoClass = document.getElementById('demoClass');
+      const demoFeed = document.getElementById('demoFeed');
+
+      const SIGNALS = [
+        { name: 'CAN Bus', unit: 'frames/sec', type: 'burst', anomalyText: 'Frame timing irregularity detected on arbitration ID 0x1A2', behaviorClass: 'Bus Timing Drift · Class 07' },
+        { name: 'Modbus RTU', unit: 'register value', type: 'step', anomalyText: 'Register value spike — flow rate exceeded safe threshold', behaviorClass: 'Threshold Breach · Class 04' },
+        { name: 'Serial', unit: 'volts', type: 'noisy', anomalyText: 'Line noise exceeding tolerance on COM3', behaviorClass: 'Signal Integrity Loss · Class 03' },
+        { name: 'Network', unit: 'packets/sec', type: 'burst', anomalyText: 'Packet timing pattern consistent with reconnaissance behavior', behaviorClass: 'Traffic Pattern Anomaly · Class 02' },
+        { name: 'Audio', unit: 'dB', type: 'sine', anomalyText: 'Acoustic signature inconsistent with baseline operating profile', behaviorClass: 'Acoustic Signature Drift · Class 09' },
+        { name: 'Biometric', unit: 'a.u.', type: 'noisy', anomalyText: 'Physiological signal deviation outside expected baseline band', behaviorClass: 'Baseline Deviation · Class 06' },
+        { name: 'EEG / ECG', unit: 'mV', type: 'sine', anomalyText: 'Irregular interval drift consistent with lead degradation', behaviorClass: 'Signal Drift · Class 09' },
+        { name: 'IoT Sensor', unit: 'reading', type: 'step', anomalyText: 'Sensor reading drift beyond calibrated tolerance', behaviorClass: 'Calibration Drift · Class 08' },
+        { name: 'RF / IQ', unit: 'dBm', type: 'spike', anomalyText: 'Unexpected power spike — possible jamming signature', behaviorClass: 'Spectral Anomaly · Class 11' },
+        { name: 'Vibration', unit: 'mm/s', type: 'sine', anomalyText: 'Bearing resonance frequency shift detected', behaviorClass: 'Resonance Shift · Class 09' },
+        { name: 'Lab Science', unit: 'a.u.', type: 'ramp', anomalyText: 'Assay signal drift beyond expected experimental envelope', behaviorClass: 'Experimental Drift · Class 08' }
+      ];
+
+      const POINTS = 90;
+      let buffer = [];
+      let tick = 0;
+      let current = 0;
+      let anomalyActive = false;
+      let anomalyTimeout = null;
+      let scheduleTimeout = null;
+
+      function genValue(type, i, anomaly) {
+        const n = () => (Math.random() - 0.5);
+        switch (type) {
+          case 'step': {
+            const step = Math.floor(i / 14) % 5;
+            return 30 + step * 8 + n() * 2 + (anomaly ? (n() > 0 ? 42 : -8) : 0);
+          }
+          case 'burst': {
+            const burstPhase = Math.floor(i / 18) % 3 === 0;
+            return (burstPhase ? 58 : 18) + n() * 6 + (anomaly ? n() * 40 : 0);
+          }
+          case 'noisy':
+            return 48 + n() * 9 + (anomaly ? n() * 46 : 0);
+          case 'spike':
+            return 18 + Math.max(0, n()) * 7 + (anomaly ? (Math.random() < 0.4 ? 68 + Math.random() * 26 : 0) : 0);
+          case 'sine':
+            return 50 + Math.sin(i * 0.16) * 17 + n() * 4 + (anomaly ? Math.sin(i * 0.85) * 24 + 12 : 0);
+          case 'ramp':
+            return 25 + ((i % 160) / 160) * 20 + n() * 1.5 + (anomaly ? 32 : 0);
+          default:
+            return 50 + n() * 10;
+        }
+      }
+
+      function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = Math.max(1, rect.width * dpr);
+        canvas.height = Math.max(1, rect.height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function draw() {
+        const rect = canvas.getBoundingClientRect();
+        const w = rect.width, h = rect.height;
+        ctx.clearRect(0, 0, w, h);
+
+        // gridlines
+        ctx.strokeStyle = 'rgba(255,255,255,.06)';
+        ctx.lineWidth = 1;
+        for (let gy = 0; gy <= 4; gy++) {
+          const y = (h / 4) * gy;
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(w, y);
+          ctx.stroke();
+        }
+
+        if (buffer.length < 2) return;
+        const max = 100, min = 0;
+        const stepX = w / (POINTS - 1);
+        const lineColor = anomalyActive ? '#f87171' : '#d8b15c';
+
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = lineColor;
+        buffer.forEach((v, idx) => {
+          const x = idx * stepX;
+          const norm = Math.min(1, Math.max(0, (v - min) / (max - min)));
+          const y = h - norm * h;
+          if (idx === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // fill under curve
+        ctx.lineTo(w, h);
+        ctx.lineTo(0, h);
+        ctx.closePath();
+        const grad = ctx.createLinearGradient(0, 0, 0, h);
+        grad.addColorStop(0, anomalyActive ? 'rgba(248,113,113,.18)' : 'rgba(216,177,92,.16)');
+        grad.addColorStop(1, 'rgba(216,177,92,0)');
+        ctx.fillStyle = grad;
+        ctx.fill();
+      }
+
+      function fmtTime() {
+        const d = new Date();
+        return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      }
+
+      function pushIncident(sig) {
+        const empty = demoFeed.querySelector('.signal-feed-empty');
+        if (empty) empty.remove();
+
+        const item = document.createElement('div');
+        item.className = 'signal-feed-item';
+        item.innerHTML =
+          '<div class="fi-top"><span class="fi-class">' + sig.behaviorClass + '</span><span class="fi-time">' + fmtTime() + '</span></div>' +
+          '<div class="fi-text">' + sig.anomalyText + '</div>';
+        demoFeed.prepend(item);
+
+        while (demoFeed.children.length > 3) {
+          demoFeed.removeChild(demoFeed.lastChild);
+        }
+      }
+
+      function setStatus(anomaly) {
+        anomalyActive = anomaly;
+        if (anomaly) {
+          demoStatus.textContent = 'Anomaly Detected';
+          demoStatus.className = 'case-status';
+        } else {
+          demoStatus.textContent = 'Nominal';
+          demoStatus.className = 'case-status ok';
+        }
+      }
+
+      let activeIndex = 0;
+
+      function scheduleAnomaly(sigIndex) {
+        clearTimeout(scheduleTimeout);
+        clearTimeout(anomalyTimeout);
+        const delay = 4000 + Math.random() * 5000;
+        scheduleTimeout = setTimeout(() => {
+          if (activeIndex !== sigIndex) return;
+          setStatus(true);
+          const sig = SIGNALS[sigIndex];
+          setTimeout(() => pushIncident(sig), 600);
+          anomalyTimeout = setTimeout(() => {
+            setStatus(false);
+            scheduleAnomaly(sigIndex);
+          }, 2600 + Math.random() * 1400);
+        }, delay);
+      }
+
+      function selectSignal(idx) {
+        activeIndex = idx;
+        const sig = SIGNALS[idx];
+        demoName.textContent = sig.name;
+        demoUnit.textContent = sig.unit;
+        demoClass.textContent = '—';
+        buffer = [];
+        tick = 0;
+        setStatus(false);
+        demoFeed.innerHTML = '<div class="signal-feed-empty">Monitoring live stream — evidence will appear here the moment a behavior deviation is detected.</div>';
+
+        grid.querySelectorAll('.signal-card').forEach(card => {
+          card.classList.toggle('active', Number(card.dataset.signal) === idx);
+        });
+
+        scheduleAnomaly(idx);
+      }
+
+      grid.querySelectorAll('.signal-card').forEach(card => {
+        card.addEventListener('click', () => selectSignal(Number(card.dataset.signal)));
+      });
+
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      selectSignal(0);
+
+      setInterval(() => {
+        tick++;
+        const sig = SIGNALS[activeIndex];
+        current = genValue(sig.type, tick, anomalyActive);
+        buffer.push(current);
+        if (buffer.length > POINTS) buffer.shift();
+        demoValue.textContent = current.toFixed(1);
+        demoClass.textContent = anomalyActive ? sig.behaviorClass.split(' ·')[0] : 'Nominal';
+        draw();
+      }, 140);
+    }
   </script>
 </body>
 </html>
