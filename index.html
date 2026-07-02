@@ -764,7 +764,7 @@
 
       const SIGNALS = [
         { name: 'CAN Bus', unit: 'frames/sec', type: 'burst', anomalyText: 'Frame timing irregularity detected on arbitration ID 0x1A2', behaviorClass: 'Bus Timing Drift · Class 07' },
-        { name: 'Modbus RTU', unit: 'register value', type: 'step', anomalyText: 'Register value spike — flow rate exceeded safe threshold', behaviorClass: 'Threshold Breach · Class 04' },
+        { name: 'Modbus RTU', unit: 'register value', type: 'step', anomalyText: 'Register value diverged from its learned behavioral baseline — flow signature broke form', behaviorClass: 'Behavioral Deviation · Class 04' },
         { name: 'Serial', unit: 'volts', type: 'noisy', anomalyText: 'Line noise exceeding tolerance on COM3', behaviorClass: 'Signal Integrity Loss · Class 03' },
         { name: 'Network', unit: 'packets/sec', type: 'burst', anomalyText: 'Packet timing pattern consistent with reconnaissance behavior', behaviorClass: 'Traffic Pattern Anomaly · Class 02' },
         { name: 'Audio', unit: 'dB', type: 'sine', anomalyText: 'Acoustic signature inconsistent with baseline operating profile', behaviorClass: 'Acoustic Signature Drift · Class 09' },
