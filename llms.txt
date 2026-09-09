@@ -1,0 +1,23 @@
+# RAINGAIA
+
+> RAINGAIA LLC builds evidence-grade monitoring software on one shared scientific core -- a per-source behavioral baseline, multi-channel evidence fusion, and a tamper-evident audit trail -- applied to three independent products: network security, structural health monitoring, and bioelectric signal analysis. Florida, USA limited liability company, established 2025.
+
+Each product is a complete, independently-run piece of software with its own engine, database, and customer accounts -- they share a reasoning discipline (source-relative baselines, fused evidence across independent channels, published or auditable methods, no black-box scoring), not a codebase. The "quantum-probabilistic" language used across all three products refers to borrowing the mathematical formalism of quantum probability theory (state vectors, density operators, entropy) to reason under uncertainty -- no quantum computing or quantum hardware is involved anywhere; every product runs as ordinary software on standard CPUs.
+
+## The three products
+
+- **Raingaia Network** (https://network.raingaia.com): Behavioral network traffic anomaly detection and intrusion risk prioritization. Learns a per-source baseline instead of matching a signature list. Public pricing from $30/month for one continuously-monitored PC/host, up to 50 PCs/hosts on the Pro plan. See https://raingaia.com/network.html and https://network.raingaia.com/llms.txt for full detail.
+- **Raingaia Seismos** (https://seismos.raingaia.com): Vibration-based structural health monitoring. Cross-checks vibration, stiffness (frequency drift), strain, and tilt/settlement into one structural health verdict -- a stiffness-loss estimate and inspection priority grounded in published structural engineering research (Worden et al. 2012, Salawu 1997), not a proprietary black-box model.
+- **Raingaia Bio** (https://bio.raingaia.com): Hardware-independent bioelectric analysis engine. Reads a bioelectric signal state across ten independent physiological domains and fuses that evidence into one confidence-gated risk index. Integrates behind whatever monitoring hardware a facility already runs -- informational analysis, not a standalone diagnostic device.
+
+## Company
+
+RAINGAIA LLC, 7901 4th St N Ste 300, St. Petersburg, FL 33702, United States. Contact: raingaia@outlook.com.
+
+## Key pages
+
+- [Homepage](https://raingaia.com/): Overview of all three products and the shared evidence-fusion approach.
+- [Technical Approach](https://raingaia.com/approach.html): Detailed explanation of the source-relative baseline and quantum-probabilistic decision layer shared across products.
+- [About](https://raingaia.com/about.html): Company background and corporate identity.
+- [FAQ](https://raingaia.com/faq.html): Answers on how the three products relate, what "quantum-probabilistic" means, data isolation, and company stage.
+- [Guides](https://raingaia.com/guides/): Plain-language guides on behavioral network detection, vibration-based structural monitoring, and multi-domain bioelectric signal fusion.
