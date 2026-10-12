@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Technical Approach — RAINGAIA</title>
-  <meta name="description" content="How RAINGAIA reasons about evidence: source-relative behavioral baselines, multi-channel signal fusion, a quantum-probabilistic decision layer (density operators, entropy, Bures distance), and a tamper-evident audit trail — the shared discipline behind Raingaia Network, Seismos, and Bio." />
+  <meta name="description" content="How RAINGAIA reasons about evidence: source-relative behavioral baselines, multi-channel signal fusion, a quantum-probabilistic decision layer (density operators, entropy, Bures distance), and a tamper-evident audit trail — how Raingaia Network reaches a verdict." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://raingaia.com/approach.html" />
   <meta name="keywords" content="behavioral baseline monitoring, multi-channel evidence fusion, quantum probability decision theory, density operator, von Neumann entropy, Bures distance, tamper-evident audit trail, threshold-free anomaly detection" />
@@ -12,14 +12,14 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://raingaia.com/approach.html">
   <meta property="og:title" content="Technical Approach — RAINGAIA">
-  <meta property="og:description" content="Source-relative baselines, multi-channel fusion, a quantum-probabilistic decision layer, and a tamper-evident audit trail — the shared reasoning discipline behind every RAINGAIA product.">
+  <meta property="og:description" content="Source-relative baselines, multi-channel fusion, a quantum-probabilistic decision layer, and a tamper-evident audit trail — how Raingaia Network reaches a verdict.">
   <meta property="og:site_name" content="RAINGAIA LLC">
   <meta property="og:image" content="https://raingaia.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Technical Approach — RAINGAIA">
-  <meta name="twitter:description" content="Source-relative baselines, multi-channel fusion, a quantum-probabilistic decision layer, and a tamper-evident audit trail — the shared reasoning discipline behind every RAINGAIA product.">
+  <meta name="twitter:description" content="Source-relative baselines, multi-channel fusion, a quantum-probabilistic decision layer, and a tamper-evident audit trail — how Raingaia Network reaches a verdict.">
   <meta name="twitter:image" content="https://raingaia.com/og-image.png">
 
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
@@ -125,7 +125,7 @@
       </a>
       <button class="mobile-toggle" id="mobileToggle">☰</button>
       <nav id="mainNav">
-        <a href="/#products">Products</a>
+        <a href="/#product">Product</a>
         <a href="/approach.html">Approach</a>
         <a href="/guides/">Guides</a>
         <a href="/about.html">About</a>
@@ -141,30 +141,26 @@
       <div class="container">
         <span class="eyebrow">Technical Approach</span>
         <h1>How we reason about evidence</h1>
-        <p class="hero-desc">Every RAINGAIA product monitors a different physical signal —
-          network packets, structural vibration, bioelectric activity — but all three make
-          decisions the same way. This page describes that shared reasoning discipline in depth.</p>
+        <p class="hero-desc">How Raingaia Network turns network traffic into a verdict you can
+          check: the reasoning behind every finding, described in depth.</p>
       </div>
     </section>
 
     <article class="container read">
 
       <h2><span class="n">01</span>Source-relative behavioral baselines</h2>
-      <p>None of our products score anything against a single global "normal." Every monitored
-        source — a network host, a sensor point on a structure, a physiological channel — is
-        tracked individually and gets its own learned baseline. A short warmup period establishes
-        what normal actually looks like for that specific source before it is ever scored against
-        anything. A database server and a laptop have different normal network profiles; a
-        support column and a floor slab have different normal vibration profiles. Treating them as
-        interchangeable is where naive threshold-based monitoring fails.</p>
+      <p>Raingaia Network never scores anything against a single global "normal." Every
+        monitored source on the network is tracked individually and gets its own learned baseline.
+        A short warmup period establishes what normal actually looks like for that specific source
+        before it is ever scored against anything. A database server and a laptop have different
+        normal network profiles; treating them as interchangeable is where naive threshold-based
+        monitoring fails.</p>
 
       <h2><span class="n">02</span>Multi-channel evidence fusion</h2>
       <p>Once a baseline exists, live signal is scored across multiple independently tracked and
         decayed channels rather than a single measurement. Each channel captures a different
         aspect of the same underlying event — timing and volume characteristics versus
-        content/protocol-level signals in network traffic; modal frequency shift versus
-        damping-ratio change in structural vibration; amplitude versus rhythm versus
-        cross-channel coherence in bioelectric signals. The channels are fused into one composite
+        content/protocol-level signals in network traffic. The channels are fused into one composite
         assessment, which is more robust than trusting any single signal — a real event tends to
         show up in more than one channel; noise usually doesn't.</p>
 
@@ -218,18 +214,14 @@
         an insurer, a regulator, a downstream investigator — not just a number on a dashboard the
         original operator already believed.</p>
 
-      <h2><span class="n">05</span>One discipline, three domains</h2>
-      <p>The table below is intentionally at the level of what each domain's raw signal actually
-        is — the shared reasoning layers above (Sections 1–4) operate on whatever that signal
-        becomes once it reaches them.</p>
+      <h2><span class="n">05</span>From packets to a verdict</h2>
+      <p>What the reasoning layers above (Sections 1–4) actually work on in Raingaia Network:</p>
       <table class="domain-table">
         <tr><th>Product</th><th>Raw signal</th><th>What a "source" is</th><th>What a verdict looks like</th></tr>
         <tr><td>Raingaia Network</td><td>Live network packets (DPI-derived: DNS, TLS SNI, HTTP host, protocol behavior)</td><td>A host, endpoint, or network segment</td><td>A composite anomaly score plus a named event classification (e.g. probable C2 beacon)</td></tr>
-        <tr><td>Raingaia Seismos</td><td>Structural vibration sensor data</td><td>A sensor point on a monitored structure</td><td>A stiffness-loss estimate, a damage-equivalent volume, and an inspection priority</td></tr>
-        <tr><td>Raingaia Bio</td><td>Bioelectric signals across ten physiological domains</td><td>A physiological channel</td><td>A confidence-gated evidence assessment with a tamper-evident record</td></tr>
       </table>
 
-      <p>Explore what each product actually does: <a href="/network.html" style="color:var(--ink);font-weight:600;border-bottom:1px solid var(--ink)">Raingaia Network</a>, <a aria-disabled="true" title="Currently unavailable" style="color:var(--ink);font-weight:600;border-bottom:1px solid var(--ink);pointer-events:none;cursor:default;opacity:.55">Raingaia Seismos</a>, or <a aria-disabled="true" title="Currently unavailable" style="color:var(--ink);font-weight:600;border-bottom:1px solid var(--ink);pointer-events:none;cursor:default;opacity:.55">Raingaia Bio</a>.</p>
+      <p>See it in practice: <a href="https://network.raingaia.com" style="color:var(--ink);font-weight:600;border-bottom:1px solid var(--ink)">Raingaia Network</a>, its <a href="https://network.raingaia.com/guides/deterministic-detection" style="color:var(--ink);font-weight:600;border-bottom:1px solid var(--ink)">deterministic detection</a> guide, and the <a href="https://network.raingaia.com/docs" style="color:var(--ink);font-weight:600;border-bottom:1px solid var(--ink)">integration reference</a>.</p>
 
     </article>
   </main>
